@@ -67,7 +67,7 @@ $greyDark 	: #75767c;
 
 /* ==== RESETS ==== */
 body { line-height: 1.6em; @include mainFont(400); }
-body.inner { background: $blueNew; }
+body.inner { background: $blueNew; padding: 100px 0 0 0; }
 ::-moz-selection { background: $blueDark; text-shadow: none; color: #ffffff; }
 ::selection { background: $blueDark; text-shadow: none; color: #ffffff; }
 
@@ -136,6 +136,7 @@ header.home { height: auto; border-bottom: 2px solid #ffffff; position: relative
 				a { color: $blueDark; text-decoration: none; @include mainFont(400); width: 100%; padding: 14px 20px; display: block;
 					@include boxSize;
 				}
+				&:last-child { border-bottom: none; }
 			}
 		}
 	}
@@ -151,16 +152,15 @@ header.home { height: auto; border-bottom: 2px solid #ffffff; position: relative
 	}
 }
 
-
 /* ==== HEADER ~ OTHER ==== */
-header.other { height: auto; border-bottom: 3px solid #ffffff; background: #ffffff;
-	.sloganStrip { width: 100%; height: 40px; float: left; margin: 106px 0 0 0; background: $blueDark; color: #ffffff; font-size: 12px; line-height: 40px; @include mainFont(300);
+header.other { height: 100px; width: 100%; position: fixed; z-index: 1; top: 0; background: #ffffff;
+	.sloganStrip { position: absolute; width: 100%; height: 40px; margin: 0; top: 60px; background: $blueDark; color: #ffffff; font-size: 12px; line-height: 40px; @include mainFont(300); border-bottom: 3px solid #ffffff;
 		span { @include mainFont(700); }
 	}
-	.logo { position: absolute; height: 78px; width: 73px; top: 14px;
-		img { width: 100%; height: auto; display: block; }
+	.logo { position: absolute; height: 78px; width: 73px; top: 14px; z-index: 4;
+		img { width: 100%; max-width: 34px; height: auto; display: block; }
 	}
-	ul.socialBar { margin: 0; padding: 0; list-style: none; position: absolute; right: 0; top: 60px;
+	ul.socialBar { margin: 0; padding: 0; list-style: none; position: absolute; z-index: 3; right: 80px; top: 16px;
 		li { float: left; font-size: 28px; margin: 0 0 0 6px; width: 28px;
 			a {
 				i { }
@@ -170,16 +170,19 @@ header.other { height: auto; border-bottom: 3px solid #ffffff; background: #ffff
 			}
 		}
 	}
-	nav { position: absolute; right: 140px; top: 60px;
-		.expander { display: none; }
-		ul { margin: 0; display: block; width: auto; background: none; position: relative; top: auto;
-			li { font-size: 14px; line-height: 34px; width: auto; margin: 0 0 0 6px; padding: 0 2px; border-bottom: none; float: left;
-				@include boxSize;
-				@include rounded(4px, 4px, 4px, 4px);
-				a { color: $blueMedium; text-decoration: none; text-transform: uppercase; padding: 0 20px; display: block; } width: auto;
-				&:hover { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
+	nav { position: relative; width: 100%; height: 60px; top: 0; z-index: 1; background: #ffffff;
+		.expander { float: right; line-height: 60px;
+			a { display: block; padding: 0 0 0 20px;
+				i { color: $blueMedium; font-size: 20px; }
 			}
-			li.active { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
+		}
+		ul { margin: 0; padding: 0; display: none; width: 100%; background: #ffffff; position: fixed; top: 100px; left: 0;
+			li { font-size: 16px; width: 100%; margin: 0; padding: 0; border-bottom: 1px solid $blueDark; float: left;
+				a { color: $blueDark; text-decoration: none; @include mainFont(400); padding: 14px 20px; display: block; width: 100%;
+					@include boxSize;
+				}
+				&:last-child { border-bottom: none; }
+			}
 		}
 	}
 }
@@ -234,21 +237,20 @@ section.sliderWrap { height: auto; background: $offWhite; position: relative; z-
 
 
 /* ==== CONTENT ==== */
-div.content { width: 100%; float: left;
+div.content { width: 100%; float: left; position: relative; z-index: 0;
 	.contentHead { position: relative; z-index: 0; padding: 20px 0 0 0;
-		h1 { color: #ffffff; width: auto; float: left; margin-bottom: 0; }
-		ul { margin: 28px 0 0 0; padding: 0; list-style: none; float: left;
-			li { float: left; margin: 0 20px 0 0;
+		h1 { color: #ffffff; width: 100%; float: left; margin-bottom: 0; }
+		ul { margin: 28px 0 14px 0; padding: 0; list-style: none; float: left;
+			li { float: left; margin: 0 20px 10px 0;
 				a { text-decoration: none; color: #ffffff; text-transform: uppercase; font-size: 12px; position: relative; top: 0;
 					@include textShadow(0px, 0px, 4px);
 					@include mainFont(300);
 					@include transition(top, 0.2s, ease);
 					&:hover { top: -3px; }
 				}
-				&:first-child { margin-left: 100px; }
 			}
-			li.active { background: #ffffff; padding: 0 10px 4px 10px;
-				@include rounded(4px, 4px, 0, 0);
+			li.active { background: #ffffff; padding: 0 10px;
+				@include rounded(4px, 4px, 4px, 4px);
 				a { color: $blueDark;
 					@include textShadow(0px, 0px, 0);
 					@include mainFont(400);
@@ -257,22 +259,19 @@ div.content { width: 100%; float: left;
 			}
 		}
 	}
-	.contentBody { background: #ffffff; @include dropShadow; width: 100%; float: left; margin: 0 0 80px 0; position: relative; z-index: 1;
+	.contentBody { background: #ffffff; @include dropShadow; width: 100%; float: left; margin: 0 0 40px 0; position: relative; z-index: 1;
 		.catImage { width: 100%; height: auto; position: relative; float: left; z-index: 1;
-			h2 { color: #ffffff; position: absolute; z-index: 1; font-size: 52px; @include mainFont(300); left: 40px; }
+			h2 { color: #ffffff; position: absolute; z-index: 1; font-size: 20px; @include mainFont(300); left: 20px; }
 			img { width: 100%; height: auto; position: relative; top: 0; display: block; border: 1px solid #ffffff; border-bottom: none; @include boxSize; z-index: 0; }
 		}
-		.subCatNav { width: 100%; margin: -15px 0 -15px 40px; float: left; position: relative; z-index: 2;
+		.subCatNav { width: 100%; margin: -21px 0; float: left; position: relative; z-index: 2; padding: 0 20px;
 			@include boxSize;
-			ul { margin: 0; padding: 0; list-style: none; position: relative; width: auto; float: left; height: 44px;
-				&:before { content: ''; position: absolute; width: 100%; height: 14px; background: url(../img/nav-shadow.png) no-repeat top center; top: 30px; left: 0; }
-				li { float: left;
-					a { text-decoration: none; background: $blueNew; color: #ffffff; height: 30px; width: auto; display: block; line-height: 30px; padding: 0 14px; font-size: 12px; @include mainFont(300); border-right: 1px solid #ffffff;
+			ul { margin: 0; padding: 0; list-style: none; position: relative; width: 100%; float: left; height: auto;
+				li { float: left; width: 100%;
+					@include boxSize;
+					a { text-decoration: none; background: $blueNew; color: #ffffff; height: 42px; width: 100%; display: block; line-height: 42px; padding: 0 14px; font-size: 12px; @include mainFont(300); border-bottom: 1px solid #ffffff;
 						@include transition(background, 0.6s, ease);
-						&:hover { background: $greenNew; }
-					}
-					&:last-child { 
-						a { border: none; }
+						@include boxSize;
 					}
 				}
 				li.active {
@@ -280,7 +279,7 @@ div.content { width: 100%; float: left;
 				}
 			}
 		}
-		.subCatCont { width: 100%; padding: 20px 40px 40px 40px; float: left; color: $greyDark; font-size: 18px;
+		.subCatCont { width: 100%; padding: 20px 20px 20px 20px; float: left; color: $greyDark; font-size: 18px;
 			@include boxSize;
 			h1 { color: $blueNew; text-transform: uppercase; font-size: 44px; @include mainFont(800); }
 			h2 { @include mainFont(300); }
@@ -297,8 +296,8 @@ div.content { width: 100%; float: left;
 			img { max-width: 100%; height: auto; display: block; }
 		}
 	}
-	.block { padding: 0 40px; @include boxSize; }
-	footer.block { padding: 56px 40px; }
+	.block { padding: 0 20px; @include boxSize; }
+	footer.block { padding: 56px 20px; }
 }
 
 
@@ -393,6 +392,9 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 
 /* Browsers > 767 */
 @media screen and (min-width: 768px) {
+	
+	/* ==== RESETS ==== */
+	body.inner { padding: 146px 0 0 0; }
 
 	/* ==== GRID SYSTEM ==== */
 	.container { width: 728px; margin: 0 0 0 -364px;
@@ -412,6 +414,53 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 	    }
 	}
 
+	/* ==== HEADER ~ OTHER ==== */
+	header.other { height: 146px;
+		.sloganStrip { top: 106px; }
+		.logo {
+			img { max-width: 126px; }
+		}
+		ul.socialBar { right: 0; top: 60px; }
+		nav { position: absolute; width: auto; height: 60px; top: 56px; right: 140px; background: none;
+			.expander { display: none; }
+			ul { display: block; width: auto; position: relative; top: auto; left: auto;
+				li { font-size: 14px; line-height: 34px; width: auto; border-bottom: none; padding: 0 2px; text-transform: uppercase;
+					@include boxSize;
+					@include rounded(4px, 4px, 4px, 4px);
+					a { color: $blueMedium; @include mainFont(400); padding: 0 14px; width: auto; }
+					&:hover { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
+				}
+				li.active { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
+			}
+		}
+	}
+
+	/* ==== CONTENT ==== */
+	div.content {
+		.contentBody {
+			.catImage {
+				h2 { font-size: 40px; left: 40px; }
+			}
+			.subCatNav { margin: -15px 0 -15px 40px; padding: 0;
+				ul { height: 44px; width: auto;
+					&:before { content: ''; position: absolute; width: 100%; height: 14px; background: url(../img/nav-shadow.png) no-repeat top center; top: 30px; left: 0; }
+					li { width: auto;
+						a { height: 30px; width: auto; line-height: 30px; border-bottom: none; border-right: 1px solid #ffffff;
+							&:hover { background: $greenNew; }
+						}
+						&:last-child { 
+							a { border: none; }
+						}
+					}
+				}
+			}
+			.subCatCont { padding: 20px 40px 40px 40px; }
+		}
+		.block { padding: 0 40px; }
+		footer.block { padding: 56px 40px; }
+	}
+	
+
 }
 
 /* Browsers > 960 */
@@ -419,6 +468,38 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 
 	/* ==== GRID SYSTEM ==== */
 	.container { width: 900px; margin: 0 0 0 -450px; }
+
+	/* ==== HEADER ~ OTHER ==== */
+	header.other {
+		nav {
+			ul {
+				li {
+					a { padding: 0 20px; }
+				}
+			}
+		}
+	}
+
+	/* ==== CONTENT ==== */
+	div.content {
+		.contentHead {
+			h1 { width: auto; }
+			ul { margin: 28px 0 0 0;
+				li { margin: 0 20px 0 0;
+					&:first-child { margin-left: 100px; }
+				}
+				li.active { padding: 0 10px 4px 10px;
+					@include rounded(4px, 4px, 0, 0);
+				}
+			}
+		}
+		.contentBody { margin: 0 0 80px 0;
+			.catImage {
+				h2 { font-size: 52px; }
+			}
+		}
+	}
+	
 
 }
 
