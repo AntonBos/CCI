@@ -22,6 +22,42 @@ App::after(function($request, $response)
 	//
 });
 
+Route::filter('admin', function(){
+
+	try 
+	{	
+
+		if ( ! Sentry::check())
+		{
+			return Redirect::to('login')->with('message', 'Please log in to continue');
+		}
+
+		$user = Sentry::getUser();
+		$admin = Sentry::findGroupByName('Admins');
+		
+		if ($user->inGroup($admin))
+		{
+			View::share('user', $user);
+		}
+		else
+		{
+			Redirect::to('login');
+		}
+
+	}
+
+	catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+	{
+		return Redirect::to('login')->with('message', 'The user was not found')->withInput(Input::except('password'));
+	}
+
+	catch(Cartalyst\Sentry\Groups\GroupNotFoundException $e)
+	{
+		return Redirect::to('login')->with('message', 'The user group was not found')->withInput(Input::except('password'));
+	}
+
+});
+
 /*
 |--------------------------------------------------------------------------
 | Authentication Filters

@@ -13,7 +13,8 @@
 		"laravel/framework": "4.1.*",
 		"laravelbook/ardent": "dev-master",
 		"jasonlewis/basset" : "dev-master",
-		"io/grid": "dev-master"
+		"io/grid": "dev-master",
+		"cartalyst/sentry": "2.0.*"
 	},
 	"autoload": {
 		"classmap": [

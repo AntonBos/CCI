@@ -1,0 +1,500 @@
+// Author : IO //
+// /* ==== IMPORTS ==== */
+@import "normalize-min.scss";
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700,800);
+
+
+// /* ==== VARIABLES ==== */
+$blueLight 	: #28bddd;
+$blueMedium : #235da4;
+$blueDark 	: #223e92;
+
+$blueNew 	: #0371a4;
+$greenNew 	: #85b200;
+
+$offWhite 	: #f8f8f8;
+$greyLight 	: #e8e8e8;
+$greyDark 	: #75767c;
+
+
+// /* ==== MIXINS ==== */
+@mixin mainFont($weight) {
+	font-family: 'Merriweather Sans', sans-serif;
+	font-weight: $weight
+}
+
+@mixin transition($property, $duration, $function, $delay : 0s) {
+	-webkit-transition: $property $duration $function $delay;
+  	-moz-transition: $property $duration $function $delay;
+  	-ms-transition: $property $duration $function $delay;
+  	-o-transition: $property $duration $function $delay;
+  	transition: $property $duration $function $delay;
+}
+
+@mixin boxSize($box : border-box) {
+	-webkit-box-sizing: $box;
+	-moz-box-sizing: $box;
+	box-sizing: $box;
+}
+
+@mixin rounded($topLeft, $topRight, $bottomRight, $bottomLeft) {
+	-webkit-border-top-left-radius: $topLeft;
+	-webkit-border-top-right-radius: $topRight;
+	-webkit-border-bottom-right-radius: $bottomRight;
+	-webkit-border-bottom-left-radius: $bottomLeft;
+
+	-moz-border-radius-topleft: $topLeft;
+	-moz-border-radius-topright: $topRight;
+	-moz-border-radius-bottomright: $bottomRight;
+	-moz-border-radius-bottomleft: $bottomLeft;
+
+	border-top-left-radius: $topLeft;
+	border-top-right-radius: $topRight;
+	border-bottom-right-radius: $bottomRight;
+	border-bottom-left-radius: $bottomLeft;
+}
+
+@mixin dropShadow {
+	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+@mixin textShadow($x, $y, $blur, $color: #000) {
+	text-shadow: $x $y $blur $color;
+}
+
+
+/* ==== RESETS ==== */
+body { line-height: 1.6em; @include mainFont(400); }
+body.inner { background: $blueNew; }
+::-moz-selection { background: $blueDark; text-shadow: none; color: #ffffff; }
+::selection { background: $blueDark; text-shadow: none; color: #ffffff; }
+
+img { vertical-align: middle; }
+
+
+/* ==== GENERAL ==== */
+.block { width: 100%; float: left; }
+
+h2 { font-size: 36px; @include mainFont(300);
+	span { @include mainFont(700); }
+}
+h3 { font-size: 36px; @include mainFont(700);
+	span { @include mainFont(300); }
+}
+h4 { font-size: 28px; @include mainFont(300);
+	span { @include mainFont(700); }
+}
+
+.button { width: auto; display: inline-block; border: 2px solid $greyDark; text-align: center; padding: 6px 10px; color: $greyDark; text-decoration: none; font-size: 18px;
+	@include rounded(4px, 4px, 4px, 4px);
+	@include mainFont(300);
+	@include transition(all, 0.4s, ease);
+	i { display: inline-block; margin: 0 0 0 10px; font-size: 14px; }
+	&:hover { color: darken($greyDark, 10%); border-color: darken($greyDark, 10%); }
+}
+.button-big { padding: 14px 32px; }
+.button-primary { border-color: $blueLight; color: $blueLight;
+	&:hover { color: darken($blueLight, 6%); border-color: darken($blueLight, 6%); }
+}
+
+
+/* ==== GRID SYSTEM ==== */
+.container { width: 100%; float: left; position: relative; left: 0; 
+	@include transition(all, 0.4s, ease);
+	.row { width: 100%; height: auto; float: left; padding: 0 20px;
+		@include boxSize;
+        .col12, .col11, .col10,
+        .col9, .col8, .col7,
+        .col6, .col5, .col4,
+        .col3, .col2, .col1 { width: 100%; margin: 0; height: auto; float: left; }
+	}
+}
+/* Template Usage Only */
+.fillIt { height: 30px; background: $blueMedium; line-height: 30px; text-align: center; color: #ffffff; margin: 0 0 1px 0 !important; }
+
+
+/* ================================================================================ */
+/* ==== HEADER ~ HOME ==== */
+header.home { height: auto; border-bottom: 2px solid #ffffff; position: relative; overflow: hidden; padding: 60px 0 0 0;
+	.container { z-index: 99; }
+	.headerGraphic { position: relative; top: 0; z-index: 0; height: 320px;
+		img { width: 300%; height: auto; display: block; margin: -40px 0 0 -470px; }
+	}
+	.logo { position: fixed; top: 13px; z-index: 2; left: 20px;
+		img { width: 100%; max-width: 34px; height: auto; display: block; }
+	}
+	nav { position: fixed; z-index: 1; background: $blueDark; width: 100%; left: 0; height: 60px; top: 0;
+		.expander { float: right; line-height: 60px;
+			a { display: block; padding: 0 20px;
+				i { color: #ffffff; font-size: 20px; }
+			}
+		}
+		ul { display: none; width: 100%; background: #ffffff; position: absolute; top: 60px; margin: 0; padding: 0;
+			li { width: 100%; float: left; font-size: 16px; border-bottom: 1px solid $blueDark;
+				a { color: $blueDark; text-decoration: none; @include mainFont(400); width: 100%; padding: 14px 20px; display: block;
+					@include boxSize;
+				}
+			}
+		}
+	}
+	.caption { position: absolute; top: 60px; height: 220px; padding: 32px 0; z-index: 0;
+		@include textShadow(0px, 0px, 4px);
+		background: url(../img/home-caption-bg-fallback.png) repeat;
+   		background: rgba(26, 43, 127, 0.6);
+   		h1 { font-size: 26px; line-height: 1.6em; color: #ffffff; margin: 0;
+   			@include mainFont(400); 
+   			span { @include mainFont(700); }
+   		}
+   		p.cta { display: none; }
+	}
+}
+
+
+/* ==== HEADER ~ OTHER ==== */
+header.other { height: auto; border-bottom: 3px solid #ffffff; background: #ffffff;
+	.sloganStrip { width: 100%; height: 40px; float: left; margin: 106px 0 0 0; background: $blueDark; color: #ffffff; font-size: 12px; line-height: 40px; @include mainFont(300);
+		span { @include mainFont(700); }
+	}
+	.logo { position: absolute; height: 78px; width: 73px; top: 14px;
+		img { width: 100%; height: auto; display: block; }
+	}
+	ul.socialBar { margin: 0; padding: 0; list-style: none; position: absolute; right: 0; top: 60px;
+		li { float: left; font-size: 28px; margin: 0 0 0 6px; width: 28px;
+			a {
+				i { }
+				i.fa-facebook-square { color: #3b5998; }
+				i.fa-twitter { color: #00aced; }
+				i.fa-linkedin-square { color: #007bb6; }
+			}
+		}
+	}
+	nav { position: absolute; right: 140px; top: 60px;
+		.expander { display: none; }
+		ul { margin: 0; display: block; width: auto; background: none; position: relative; top: auto;
+			li { font-size: 14px; line-height: 34px; width: auto; margin: 0 0 0 6px; padding: 0 2px; border-bottom: none; float: left;
+				@include boxSize;
+				@include rounded(4px, 4px, 4px, 4px);
+				a { color: $blueMedium; text-decoration: none; text-transform: uppercase; padding: 0 20px; display: block; } width: auto;
+				&:hover { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
+			}
+			li.active { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
+		}
+	}
+}
+
+
+/* ==== INTRODUCTION ==== */
+section.introWrap { height: auto; background: $blueMedium; padding: 84px 0; color: #ffffff; position: relative; z-index: 2;
+	@include dropShadow;
+	h2 { margin-top: 0; }
+	p { margin: 0; font-size: 20px; line-height: 1.6em; @include mainFont(300); }
+	.col3 { text-align: center;
+		.button { margin: 90px 0 0 0; }
+	}
+}
+
+
+/* ==== SLIDER ==== */
+section.sliderWrap { height: auto; background: $offWhite; position: relative; z-index: 1;
+	.slider-wrapper { width: 100%; position: relative;
+		.nivoSlider { position: relative; width: 100%; height: auto; overflow: hidden;
+			img { position: absolute; top: 0px; left: 0px; max-width: none; }
+			.nivo-main-image { display: block !important; position: relative !important; width: 100% !important; }
+			.nivo-slice { display: block; position: absolute; z-index: 5; height: 100%; top: 0; }
+			.nivo-box { display: lock; position: absolute; z-index: 5; overflow: hidden;
+				img { display: block; }
+			}
+			.nivo-caption { position: absolute; right: 0px; top: 150px; color: $greyDark; width: 48%; z-index: 8; overflow: hidden; display: none;
+				h3 { }
+				p { @include mainFont(300); font-size: 20px; line-height: 1.6em; }
+			}
+			.nivo-directionNav {
+				a { position: absolute; top: 90px; z-index: 9; cursor: pointer; width: 52px; height: 52px; font-size: 20px; color: $blueLight; display: block; border: 2px solid $blueLight; line-height: 52px; text-align: center;
+					@include rounded(4px, 4px, 4px, 4px);
+					@include transition(all, 0.4s, ease);
+					&:hover { color: $blueMedium; border: 2px solid $blueMedium; }
+				}
+				.nivo-prevNav { left: 0px; }
+				.nivo-nextNav { left: 66px; }
+			}
+		}
+		.nivo-controlNav.nivo-thumbs-enabled { width: 48%; position: absolute; z-index: 100; top: 110px; right: 0px;
+			a { cursor: pointer; width: auto; height: auto; color: $greyDark; font-size: 14px; margin: 0 24px 0 0; display: block; float: left;
+				@include mainFont(300);
+				&:hover { color: $blueLight; }
+				&:last-child { margin: 0; }
+			}
+			a.active { color: $blueLight; }
+		}
+		.nivo-html-caption { display: none; }
+	}
+}
+
+
+/* ==== CONTENT ==== */
+div.content { width: 100%; float: left;
+	.contentHead { position: relative; z-index: 0; padding: 20px 0 0 0;
+		h1 { color: #ffffff; width: auto; float: left; margin-bottom: 0; }
+		ul { margin: 28px 0 0 0; padding: 0; list-style: none; float: left;
+			li { float: left; margin: 0 20px 0 0;
+				a { text-decoration: none; color: #ffffff; text-transform: uppercase; font-size: 12px; position: relative; top: 0;
+					@include textShadow(0px, 0px, 4px);
+					@include mainFont(300);
+					@include transition(top, 0.2s, ease);
+					&:hover { top: -3px; }
+				}
+				&:first-child { margin-left: 100px; }
+			}
+			li.active { background: #ffffff; padding: 0 10px 4px 10px;
+				@include rounded(4px, 4px, 0, 0);
+				a { color: $blueDark;
+					@include textShadow(0px, 0px, 0);
+					@include mainFont(400);
+					&:hover { top: 0; }
+				}
+			}
+		}
+	}
+	.contentBody { background: #ffffff; @include dropShadow; width: 100%; float: left; margin: 0 0 80px 0; position: relative; z-index: 1;
+		.catImage { width: 100%; height: auto; position: relative; float: left; z-index: 1;
+			h2 { color: #ffffff; position: absolute; z-index: 1; font-size: 52px; @include mainFont(300); left: 40px; }
+			img { width: 100%; height: auto; position: relative; top: 0; display: block; border: 1px solid #ffffff; border-bottom: none; @include boxSize; z-index: 0; }
+		}
+		.subCatNav { width: 100%; margin: -15px 0 -15px 40px; float: left; position: relative; z-index: 2;
+			@include boxSize;
+			ul { margin: 0; padding: 0; list-style: none; position: relative; width: auto; float: left; height: 44px;
+				&:before { content: ''; position: absolute; width: 100%; height: 14px; background: url(../img/nav-shadow.png) no-repeat top center; top: 30px; left: 0; }
+				li { float: left;
+					a { text-decoration: none; background: $blueNew; color: #ffffff; height: 30px; width: auto; display: block; line-height: 30px; padding: 0 14px; font-size: 12px; @include mainFont(300); border-right: 1px solid #ffffff;
+						@include transition(background, 0.6s, ease);
+						&:hover { background: $greenNew; }
+					}
+					&:last-child { 
+						a { border: none; }
+					}
+				}
+				li.active {
+					a { background: $greenNew; }
+				}
+			}
+		}
+		.subCatCont { width: 100%; padding: 20px 40px 40px 40px; float: left; color: $greyDark; font-size: 18px;
+			@include boxSize;
+			h1 { color: $blueNew; text-transform: uppercase; font-size: 44px; @include mainFont(800); }
+			h2 { @include mainFont(300); }
+			h3 { @include mainFont(700); font-size: 22px; }
+			h4 { @include mainFont(300); font-size: 22px; }
+			h5 { }
+			h6 { }
+			ul { list-style: none; line-height: 1.8em; 
+				li { position: relative;
+					&:before { content: ''; position: absolute; width: 6px; height: 6px; left: -20px; top: 12px; background: #aac4d0; }
+				}
+			}
+			p { line-height: 1.8em; }
+			img { max-width: 100%; height: auto; display: block; }
+		}
+	}
+	.block { padding: 0 40px; @include boxSize; }
+	footer.block { padding: 56px 40px; }
+}
+
+
+/* ==== CLIENT STRIP ==== */
+aside.clientStrip { height: auto; background: #ffffff; position: relative; z-index: 2;
+	@include dropShadow;
+	h4 { text-align: center; color: $greyDark; margin-bottom: 0.6em; }
+	h5 { text-align: center; color: $blueLight; font-size: 14px; @include mainFont(300); margin: 0; }
+	.list_carousel { margin: 30px 0; width: 100%;
+		ul { margin: 0; padding: 0; list-style: none; display: block;
+			li { width: 190px; height: 60px; padding: 0; margin: 6px 3px; display: block; float: left; }
+		}
+	}
+	.prev { float: left; margin-left: 10px; }
+	.next { float: right; margin-right: 10px; }
+}
+
+
+/* ==== FOOTER ==== */
+footer { height: auto; background: $greyLight; position: relative; z-index: 3; padding: 56px 0;
+	h6 { font-size: 20px; @include mainFont(300); color: $greyDark; margin: 0 0 14px 0; }
+	ul.details { margin: 0; padding: 0; list-style: none; width: 100%; float: left;
+		li { float: left; font-size: 13px; @include mainFont(400); border-left: 1px solid $greyDark; color: $greyDark; line-height: 13px; margin: 0 0 0 16px; padding: 0 0 0 16px;
+			strong { @include mainFont(700); margin: 0 14px 0 0; }
+			a { color: $blueDark; @include mainFont(700);
+				&:hover { text-decoration: none; }
+			}
+			&:first-child { border-left: none; margin: 0; padding: 0; }
+		}
+	}
+	p.copyright { font-size: 11px; @include mainFont(300); color: $greyDark; margin: 50px 0 0 0; }
+	.footerLogo { float: right; margin: 12px 0 0 0; }
+}
+
+
+/* ================================================================================ */
+/* ==== MEDIA QUERIES ==== */
+/* Browsers > 320 */
+@media screen and (min-width: 321px) {
+	
+	/* ==== HEADER ~ HOME ==== */
+	header.home {
+		.headerGraphic { height: 340px;
+			img { width: 260%; margin: -60px 0 0 -500px; }
+		}
+	}
+
+}
+
+/* Browsers > 480 */
+@media screen and (min-width: 480px) {
+
+	/* ==== GRID SYSTEM ==== */
+	.container { width: 480px; margin: 0 0 0 -240px; left: 50%;
+		.row { padding: 0; }
+	}
+
+	/* ==== HEADER ~ HOME ==== */
+	header.home { height: 518px; padding: 0;
+		.headerGraphic { position: absolute; top: auto; height: auto;
+			img { width: 100%; margin: 0; }
+		}
+		.logo { position: absolute; top: 36px; left: auto;
+			img { max-width: 126px; }
+		}
+		nav { float: right; position: relative; background: none; width: auto; left: auto; height: auto; top: auto;
+			.expander { display: none; }
+			ul { margin: 16px 0 0 0; display: block; width: auto; background: none; position: relative; top: auto;
+				li { font-size: 14px; line-height: 44px; width: auto; margin: 0 0 0 10px; padding: 0 2px; border-bottom: none;
+					@include boxSize;
+					@include rounded(4px, 4px, 4px, 4px);
+					a { color: $blueMedium; text-decoration: none; text-transform: uppercase; padding: 0 20px; display: block; } width: auto;
+					&:hover { line-height: 40px; border: 2px solid $blueMedium; padding: 0; }
+				}
+				li.active { line-height: 40px; border: 2px solid $blueMedium; padding: 0; }
+			}
+		}
+		.caption { position: absolute; top: auto; bottom: 0; height: auto;
+	   		h1 { font-size: 30px; line-height: 58px; }
+	   		p.cta { font-size: 14px; line-height: 14px; color: #ffffff; text-align: center; margin: 0; display: block;
+	   			@include mainFont(300); 
+	   			a { width: 100%; float: left; display: block; font-size: 30px; line-height: 30px; text-decoration: none; color: #ffffff; margin: 14px 0 0 0;
+	   				@include mainFont(800);
+	   				@include transition(all, 0.2s, ease);
+	   				&:hover { color: $blueLight; font-size: 24px; }
+	   			}
+	   		}
+		}
+	}
+
+}
+
+/* Browsers > 767 */
+@media screen and (min-width: 768px) {
+
+	/* ==== GRID SYSTEM ==== */
+	.container { width: 728px; margin: 0 0 0 -364px;
+	    .row {
+	        .col12 { width: 100%; }
+	        .col11 { width: 91.6666666%; }
+	        .col10 { width: 83.3333333%; }
+	        .col9 { width: 75%; }
+	        .col8 { width: 66.6666666%; }
+	        .col7 { width: 58.3333333%; }
+	        .col6 { width: 50%; }
+	        .col5 { width: 41.6666667%; }
+	        .col4 { width: 33.3333336%; }
+	        .col3 { width: 25%; }
+	        .col2 { width: 16.666666%; }
+	        .col1 { width: 8.3333333%; }
+	    }
+	}
+
+}
+
+/* Browsers > 960 */
+@media screen and (min-width: 960px) {
+
+	/* ==== GRID SYSTEM ==== */
+	.container { width: 900px; margin: 0 0 0 -450px; }
+
+}
+
+/* Browsers > 1200 */
+@media screen and (min-width: 1200px) {
+
+	/* ==== GRID SYSTEM ==== */
+	.container { width: 1180px; margin: 0 0 0 -590px; }
+
+}
+
+
+/* ==== PRINT ==== */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
