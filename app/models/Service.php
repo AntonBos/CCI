@@ -25,7 +25,7 @@ class Service extends Ardent {
         parent::__construct();
 
         $this->purgeFilters[] = function($key) {
-            $keep = array('service_id', 'name', 'hero_image', 'description', 'enabled', 'created_at', 'updated_at');
+            $keep = array('service_id', 'name', 'hero_image', 'short_description', 'description', 'enabled', 'created_at', 'updated_at');
             return in_array($key, $keep);
         };
     }
@@ -44,14 +44,12 @@ class Service extends Ardent {
     {
         parent::boot();
 
-        Service::creating(function($service)
+        Service::saving(function($service)
         {
-        	return self::uploadImage($service);
-        });
+        	self::uploadImage($service);
+        	self::createSlug($service);
 
-        Service::updating(function($service)
-        {
-        	return self::uploadImage($service);
+        	return true;
         });
     }
 
@@ -66,4 +64,27 @@ class Service extends Ardent {
 
     	return true;
 	}
+
+	public static function createSlug($service){
+
+		$service->slug = Str::slug($service->name);
+		return true;
+	}
+
+	public static function scopeIsTopLevel($query){
+
+		return $query->whereServiceId(0);
+	}
+
+	public static function scopeIsEnabled($query){
+
+        return $query->whereEnabled('1');
+    }
+
+    public static function getMenuUrl(){
+
+    	$service = self::orderBy('id', 'ASC')->first();
+
+    	return '/services/'.$service->slug;
+    }
 }

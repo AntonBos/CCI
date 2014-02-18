@@ -77,6 +77,15 @@ Route::get('/logout', function(){
 
 });
 
+Route::get('courses/{categorySlug}/{slug?}', function($categorySlug, $slug) {
+    $course = Course::leftJoin('categories', 'categories.id', 'courses.category_id')
+        ->where('categories.slug', $categorySlug)
+        ->where('courses.slug', $slug)
+        ->firstOrFail();
+
+    return View::make('courses.show')->with('course', $course);
+});
+
 Route::group(array('prefix' => 'admin', 'before' => 'admin'), function()
 {
 
@@ -88,5 +97,5 @@ Route::group(array('prefix' => 'admin', 'before' => 'admin'), function()
 	Route::controller('users', 'UserController');
 	Route::controller('about-pages', 'AboutController');
 	Route::controller('services', 'ServiceController');
-	//Route::controller('content-areas', 'ContentAreaController');
+	Route::controller('content-areas', 'ContentAreaController');
 });

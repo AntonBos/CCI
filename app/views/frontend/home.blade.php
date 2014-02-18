@@ -7,7 +7,7 @@
                     
                     <div class="col9">
                         <h2>About <span>CCI</span></h2>
-                        <p>CCI is an independent IT convergence company. The company's core business is the delivery of IT services specifically the physical installation (reticulation) of computer cabling, PABX and telephone, CCTV and electrical networks. It is structured into five specialised divisions to provide clients with effective solutions. The divisions are cabling, voice, networks, power and smart power management systems.</p>
+                        {{ ContentArea::getbyName('Home About CCI')->description }}
                     </div>
 
                     <div class="col3"><a href="" class="button button-big button-primary">Read More <i class="fa fa-chevron-right"></i></a></div>
@@ -25,33 +25,44 @@
                     
                     <div class="col12">
                         <div class="slider-wrapper">
+                            <?php
+                            $ourServicesContent = ContentArea::getByName('Our Services');
+                            ?>
                             <div id="slider" class="nivoSlider">
-                                <img src="/img/slide-cabling.png" data-thumb="Our Services" alt="" title="#services">
-                                <img src="/img/slide-cabling.png" data-thumb="Cabling" alt="" title="#cabling">
-                                <img src="/img/slide-cabling.png" data-thumb="Networks" alt="" title="#networks">
-                                <img src="/img/slide-cabling.png" data-thumb="Voice" alt="" title="#voice">
-                                <img src="/img/slide-cabling.png" data-thumb="Power &amp; Building Management" alt="" title="#power">
+                                <img src="/img/slide-cabling.png" data-thumb="Our Services" alt="" title="#ourServices">
+                                @foreach(Service::orderBy('id')->isEnabled()->isTopLevel()->get() as $service)
+                                <img src="/img/slide-cabling.png" data-thumb="{{ $service->name }}" alt="" title="#{{ explode(' ',$service->name)[0] }}">
+                                @endforeach
                             </div>
-                            <div id="services" class="nivo-html-caption">
+                            <div id="ourServices" class="nivo-html-caption">
                                 <h3><span>Our</span> Services</h3>
-                                <p>Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a iaculis nulla turpis sed wisi. Fusce volutpat. Etiam sodales ante id nunc. Proin ornare dignissim lacus. Nunc porttitor nunc a sem. Sed sollicitudin velit eu magna. Aliquam erat volutpat. Vivamus ornare est non wisi. Proin vel quam. Vivamus egestas. Nunc tempor diam vehicula mauris. Nullam sapien eros, facilisis vel, eleifend non, auctor dapibus, pede.</p>
+                                {{ $ourServicesContent->description }}
                             </div>
-                            <div id="cabling" class="nivo-html-caption">
-                                <h3>Cabling</h3>
-                                <p>Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a iaculis nulla turpis sed wisi. Fusce volutpat. Etiam sodales ante id nunc. Proin ornare dignissim lacus. Nunc porttitor nunc a sem. Sed sollicitudin velit eu magna. Aliquam erat volutpat. Vivamus ornare est non wisi. Proin vel quam. Vivamus egestas. Nunc tempor diam vehicula mauris. Nullam sapien eros, facilisis vel, eleifend non, auctor dapibus, pede.</p>
+                            @foreach(Service::orderBy('id')->isEnabled()->isTopLevel()->get() as $service)
+
+                                <?php
+                                $nameComps = explode(' ',$service->name);
+                                $i = 0;
+                                $title = '';
+                                foreach($nameComps as $nameComp){
+
+                                    if($i%2 != 0){
+
+                                        $title .= '<span>'.$nameComp.'</span> ';
+
+                                    }else{
+
+                                         $title .= $nameComp.' ';
+                                    }
+
+                                    $i++;
+                                }
+                                ?>
+                            <div id="{{ explode(' ',$service->name)[0] }}" class="nivo-html-caption">
+                                <h3>{{ $title }}</h3>
+                                {{ $service->short_description }}
                             </div>
-                            <div id="networks" class="nivo-html-caption">
-                                <h3>Networks</h3>
-                                <p>Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a iaculis nulla turpis sed wisi. Fusce volutpat. Etiam sodales ante id nunc. Proin ornare dignissim lacus. Nunc porttitor nunc a sem. Sed sollicitudin velit eu magna. Aliquam erat volutpat. Vivamus ornare est non wisi. Proin vel quam. Vivamus egestas. Nunc tempor diam vehicula mauris. Nullam sapien eros, facilisis vel, eleifend non, auctor dapibus, pede.</p>
-                            </div>
-                            <div id="voice" class="nivo-html-caption">
-                                <h3>Voice</h3>
-                                <p>Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a iaculis nulla turpis sed wisi. Fusce volutpat. Etiam sodales ante id nunc. Proin ornare dignissim lacus. Nunc porttitor nunc a sem. Sed sollicitudin velit eu magna. Aliquam erat volutpat. Vivamus ornare est non wisi. Proin vel quam. Vivamus egestas. Nunc tempor diam vehicula mauris. Nullam sapien eros, facilisis vel, eleifend non, auctor dapibus, pede.</p>
-                            </div>
-                            <div id="power" class="nivo-html-caption">
-                                <h3>Power <span>&amp;</span> Building <span>Management</span></h3>
-                                <p>Aliquam aliquet, est a ullamcorper condimentum, tellus nulla fringilla elit, a iaculis nulla turpis sed wisi. Fusce volutpat. Etiam sodales ante id nunc. Proin ornare dignissim lacus. Nunc porttitor nunc a sem. Sed sollicitudin velit eu magna. Aliquam erat volutpat. Vivamus ornare est non wisi. Proin vel quam. Vivamus egestas. Nunc tempor diam vehicula mauris. Nullam sapien eros, facilisis vel, eleifend non, auctor dapibus, pede.</p>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 

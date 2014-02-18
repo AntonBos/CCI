@@ -32,6 +32,11 @@
 							{{ Form::file('hero_image', $instance->hero_image, array('class' => 'form-control')) }}
 						</div>
 						<div class="form-group">
+							{{ Form::label('short_description', 'Short description of Service') }}
+							{{ $errors->first('short_description') }}
+							{{ Form::textarea('short_description', $instance->short_description, array('id' => 'shortDescriptionTextarea', 'class' => 'form-control', 'placeholder' => 'Short description of service')) }}
+						</div>
+						<div class="form-group">
 							{{ Form::label('description', 'Service Content') }}
 							{{ $errors->first('description') }}
 							{{ Form::textarea('description', $instance->description, array('id' => 'descriptionTextarea', 'class' => 'form-control', 'placeholder' => 'Content of the service page')) }}

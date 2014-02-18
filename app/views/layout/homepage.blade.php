@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -36,10 +35,10 @@
                             <div class="expander"><a href="#"><i class="fa fa-bars"></i></a></div>
                             <ul>
                                 <li class="active"><a href="index.html">Home</a></li>
-                                <li><a href="">About</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="">Support</a></li>
-                                <li><a href="">Contact</a></li>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/services">Services</a></li>
+                                <li><a href="/support">Support</a></li>
+                                <li><a href="/contact">Contact</a></li>
                             </ul>
                         </nav>
 
