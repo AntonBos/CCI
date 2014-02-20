@@ -60,7 +60,7 @@
                                 ?>
                             <div id="{{ explode(' ',$service->name)[0] }}" class="nivo-html-caption">
                                 <h3>{{ $title }}</h3>
-                                {{ $service->short_description }}
+                                <p>{{ $service->short_description }}</p>
                             </div>
                             @endforeach
                         </div>

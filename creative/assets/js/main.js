@@ -7,6 +7,7 @@
 // Initiate Nivo Slider
 // Initiate CaroFredsel
 // Mobile Navigation Dropdown
+// Navigation Hide/Show
 
 // ==== NAMESPACE ==== //
 window.cci = {}
@@ -16,23 +17,23 @@ $(function(){
 	try {
 		
 		cci.go.replaceSVG();
+		// cci.go.homeSticky();
 		cci.go.pasteYear();
 		cci.go.navDrop();
 
 		// ==== ON RESIZE ==== //
 		$(window).resize(function() {
 
-			if ( window.innerWidth > 480 ) {
-				cci.go.resizeHeader();
-			}
+			cci.go.navShowHide();
 			cci.go.initCaroFred();
+			cci.go.initNivo();
 
 		}).resize();
 
 		// ==== ON LOAD ==== //
 		$(window).load(function() {
 
-			cci.go.initNivo();
+			// cci.go.initNivo();
 
         });
 
@@ -54,7 +55,7 @@ cci.go = {
 		    	return $(this).attr('src').replace('.svg', '.png');
 			});
 		} else {
-			$('.logo').find('img').addClass('svg');
+			// $('.logo').find('img').addClass('svg');
 		}
 	},
 
@@ -63,7 +64,55 @@ cci.go = {
 		var graphicHeight = $('.headerGraphic img').height();
 		
 		if ( graphicHeight < 518 ) {
-			$('header').css('height', graphicHeight);
+			$('header.home').css('height', graphicHeight);
+		} else {
+			$('header.home').css('height', '518px');
+		}
+	},
+
+	// Home Sticky Nav
+	homeSticky: function() {
+
+		var top 		= $(document).scrollTop(),
+			imageWrap 	= $('.headerGraphic'),
+			imageHeight = imageWrap.children('img').height(),
+			head 		= $('header.home'),
+			logo 		= $('.logo'),
+			nav 		= $('nav')
+
+		if ( top > imageHeight ) {
+
+			head.animate({
+				// 'padding-top' : 60,
+				'height' : 'auto'
+			});
+			// alert('now');
+			// logo.addClass('stick');
+			// logo.find('img[src*="svg"]').attr('src', function() {
+			// 	return $(this).attr('src').replace('logo.svg', 'logo-color.svg');
+			// });
+			// logo.find('img[src*="png"]').attr('src', function() {
+			// 	return $(this).attr('src').replace('logo.png', 'logo-color.png');
+			// });
+			// nav.addClass('stick');
+
+			// cci.go.replaceSVG();
+
+		} else {
+
+			head.animate({
+				// 'padding-top' : 0,
+				'height' : imageHeight
+			});
+			// logo.removeClass('stick');
+			// logo.find('img[src*="svg"]').attr('src', function() {
+			// 	return $(this).attr('src').replace('logo-color.svg', 'logo.svg');
+			// });
+			// logo.find('img[src*="png"]').attr('src', function() {
+			// 	return $(this).attr('src').replace('logo-color.png', 'logo.png');
+			// });
+			// nav.removeClass('stick');
+
 		}
 	},
 
@@ -78,6 +127,20 @@ cci.go = {
 		var nextArrow 	= '<i class="fa fa-chevron-right"></i>',
 			prevArrow 	= '<i class="fa fa-chevron-left"></i>';
 
+		function calcTop(){
+			if ( window.innerWidth > 1200 ) {
+				h3Top = '150px';
+			} else if ( window.innerWidth > 768 ) {
+				h3Top = '8%';
+			} else if ( window.innerWidth > 480 ) {
+				h3Top = '20%';
+			} else {
+				h3Top = '3%';
+			}
+		}
+
+		calcTop();
+
 		$('#slider').nivoSlider({
 		    effect: 'fold',
 		    animSpeed: 500,
@@ -89,18 +152,16 @@ cci.go = {
 		    beforeChange: function(){
 		    	$('.nivo-caption').animate({ 
 		    		opacity : 0,
-		    		top : '300px'
+		    		top : '400px'
 		    	}, 400);
+		    	calcTop();
 		    },
 		    afterChange: function(){
 		    	$('.nivo-caption').animate({ 
 		    		opacity : 1,
-		    		top : '150px'
+		    		top : h3Top
 		    	}, 400);
-		    },
-		    slideshowEnd: function(){},     // Triggers after all slides have been shown
-		    lastSlide: function(){},        // Triggers when last slide is shown
-		    afterLoad: function(){}         // Triggers when slider has loaded
+		    }
 		});
 	},
 
@@ -139,10 +200,22 @@ cci.go = {
 
 	// Mobile Navigation Dropdown
 	navDrop: function() {
+
 		$('.expander').on('click', 'a', function(e){
 			e.preventDefault();
-			$(this).parent().siblings('ul').slideToggle();
+			$('nav ul').slideToggle();
 		});
+	},
+
+	// Navigation Hide/Show
+	navShowHide: function() {
+		var navUl = $('nav ul');
+
+		if ( window.innerWidth > 768 ) {
+			navUl.show();
+		} else {
+			navUl.hide();
+		}
 	}
 				
 
