@@ -74,8 +74,10 @@
         <section class="highlightsWrap block">
             <div class="container">
 
-                <h2>Highlights</h2>
-
+                <div class="row">
+                    <div class="col12"><h2>Highlights</h2></div>
+                </div>
+                
                 <div class="row">
 
                     <div class="col4">
