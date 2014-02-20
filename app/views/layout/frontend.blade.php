@@ -35,7 +35,7 @@
                             <div class="expander"><a href="#"><i class="fa fa-bars"></i></a></div>
                             <?php  
                             $baseURL = Request::segments()[0];
-                            dd($baseURL);
+                            //dd($baseURL);
                             $mainMenuItems = array('about' => 'About', 'services' => 'Services', 'support' => 'Support', 'contact' => 'Contact');
                             ?>
                             <ul>
