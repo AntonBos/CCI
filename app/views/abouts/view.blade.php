@@ -32,11 +32,7 @@
 
                             <div class="catImage">
                                 <h2>{{ $content->name }}</h2>
-                                <?php
-                                //$img = Image::make(Request::root().$content->hero_image)->crop(1024,240);
-                                //dd($img);
-                                ?>
-                                <img src="{{ !empty($content->hero_image) ? $content->hero_image : '/imageuploads/cabling-temp.jpg' }}" alt="">
+                                <img src="{{ !empty($content->hero_image) ? /*Image::make(Request::root().$content->hero_image)->crop(1024,240)->encode('png', 75)*/ $content->hero_image : '/imageuploads/cabling-temp.jpg' }}" alt="">
                             </div>
                             <div class="subCatCont">
                             	<h1>{{ $content->name }}</h1>
