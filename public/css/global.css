@@ -647,6 +647,35 @@ section.sliderWrap {
     section.sliderWrap .slider-wrapper .nivo-html-caption {
       display: none; }
 
+/* ==== HIGHLIGHTS ==== */
+section.highlightsWrap {
+  color: #75767c;
+  padding: 40px 0; }
+  section.highlightsWrap .h2 {
+    margin-top: 0; }
+  section.highlightsWrap .row {
+    width: 104%;
+    position: relative;
+    left: -2%; }
+  section.highlightsWrap .col4 {
+    margin: 0 2% !important;
+    width: 29.3333336% !important; }
+  section.highlightsWrap .highImage {
+    width: 100%;
+    float: left;
+    height: auto;
+    background: #235da4; }
+    section.highlightsWrap .highImage img {
+      width: 100%;
+      height: auto;
+      display: block; }
+    section.highlightsWrap .highImage:hover img {
+      opacity: 0.6; }
+  section.highlightsWrap .highWrap {
+    width: 100%;
+    float: left;
+    height: auto; }
+
 /* ==== CONTENT ==== */
 div.content {
   width: 100%;

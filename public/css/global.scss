@@ -231,6 +231,25 @@ section.sliderWrap { height: auto; background: $offWhite; position: relative; z-
 }
 
 
+/* ==== HIGHLIGHTS ==== */
+section.highlightsWrap { color: $greyDark; padding: 40px 0;
+	.h2 { margin-top: 0; }
+	.row { width: 104%; position: relative; left: -2%; }
+	.col4 { margin: 0 2% !important; width: 29.3333336% !important; }
+	.highImage { width: 100%; float: left; height: auto; background: $blueMedium;
+		img { width: 100%; height: auto; display: block; }
+		&:hover {
+			img { opacity: 0.6; }
+		}
+	}
+	.highWrap { width: 100%; float: left; height: auto;
+		h4 { }
+		time { }
+		p { }
+	}
+}
+
+
 /* ==== CONTENT ==== */
 div.content { width: 100%; float: left; position: relative; z-index: 0;
 	.contentHead { position: relative; z-index: 0; padding: 20px 0 0 0;
