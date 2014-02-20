@@ -134,6 +134,16 @@ Route::get('about/{about?}', function($about = false){
 	return View::make('abouts.view')->with('content', $content);
 });
 
+Route::get('support', function(){
+
+	return View::make('frontend.support');
+});
+
+Route::get('contact', function(){
+
+	return View::make('frontend.contact');
+});
+
 Route::group(array('prefix' => 'admin', 'before' => 'admin'), function()
 {
 

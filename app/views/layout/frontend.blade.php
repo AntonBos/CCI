@@ -43,7 +43,7 @@
                                 <?php
                                 foreach($mainMenuItems as $url => $display){
 
-                                    ?><li><a href="/{{ $url }}" {{ $baseURL == $url ? 'class="active"' : '' }}>{{ $display }}</a></li><?php
+                                    ?><li {{ $baseURL == $url ? 'class="active"' : '' }}><a href="/{{ $url }}">{{ $display }}</a></li><?php
                                 }
                                 ?>  
                             </ul>

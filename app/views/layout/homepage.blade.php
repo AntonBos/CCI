@@ -33,7 +33,7 @@
                         <nav>
                             <div class="expander"><a href="#"><i class="fa fa-bars"></i></a></div>
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="/">Home</a></li>
                                 <li><a href="/about">About</a></li>
                                 <li><a href="/services">Services</a></li>
                                 <li><a href="/support">Support</a></li>
