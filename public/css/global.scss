@@ -79,6 +79,8 @@ body.inner { background: $blueNew; padding: 100px 0 0 0; }
 
 img { vertical-align: middle; }
 
+a { outline: none !important; }
+
 
 /* ==== GENERAL ==== */
 .block { width: 100%; float: left; }
@@ -373,6 +375,177 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 }
 
 
+/* ================================================================================ */
+/* ==== IE8 HACKS ==== */
+.ie8 {
+	
+	/* ==== GRID SYSTEM ==== */
+	.container { width: 900px; margin: 0 0 0 -450px; left: 50%;
+		.row { padding: 0;
+	        .col12 { width: 100%; }
+	        .col11 { width: 91.6666666%; }
+	        .col10 { width: 83.3333333%; }
+	        .col9 { width: 75%; }
+	        .col8 { width: 66.6666666%; }
+	        .col7 { width: 58.3333333%; }
+	        .col6 { width: 50%; }
+	        .col5 { width: 41.6666667%; }
+	        .col4 { width: 33.3333336%; }
+	        .col3 { width: 25%; }
+	        .col2 { width: 16.666666%; }
+	        .col1 { width: 8.3333333%; }
+	    }
+	}
+
+	/* ==== HEADER ~ OTHER ==== */
+	header.other { height: 146px;
+		.sloganStrip { top: 106px; }
+		.logo {
+			img { max-width: 126px; }
+		}
+		ul.socialBar { right: 0; top: 60px; }
+		nav { position: absolute; width: auto; height: 60px; top: 56px; right: 140px; background: none;
+			.expander { display: none; }
+			ul { display: block; width: auto; position: relative; top: auto; left: auto;
+				li { font-size: 14px; line-height: 34px; width: auto; border-bottom: none; padding: 0 2px; text-transform: uppercase;
+					@include boxSize;
+					@include rounded(4px, 4px, 4px, 4px);
+					a { color: $blueMedium; @include mainFont(400); padding: 0 20px; width: auto; }
+					&:hover { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
+				}
+				li.active { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
+			}
+		}
+	}
+
+	/* ==== HEADER ~ HOME ==== */
+	header.home { padding: 0;
+		.headerGraphic { height: auto; max-height: 518px;
+			img { width: 100%; margin: 0; }
+		}
+		.container { position: absolute; top: 0; }
+		.logo { position: absolute; top: 36px; left: auto;
+			img { max-width: 126px; }
+		}
+		nav { background: none; float: right; position: relative; width: auto; left: auto; height: auto; top: auto;
+			.expander { display: none; }
+			ul { margin: 16px 0 0 0; display: block; width: auto; background: none; position: relative; top: auto;
+				li { font-size: 14px; line-height: 38px; width: auto; margin: 0 0 0 10px; padding: 0 2px; border-bottom: none;
+					@include boxSize;
+					@include rounded(4px, 4px, 4px, 4px);
+					a { color: $blueMedium; text-decoration: none; text-transform: uppercase; padding: 0 20px; display: block; } width: auto;
+					&:hover { line-height: 34px; border: 2px solid $blueMedium; padding: 0; }
+				}
+				li.active { line-height: 34px; border: 2px solid $blueMedium; padding: 0; }
+			}
+		}
+		.caption { top: auto; bottom: 0; height: auto; padding: 32px 0;
+			.container { position: relative; top: auto; }
+	   		h1 { font-size: 30px; line-height: 58px; }
+	   		p.cta { font-size: 14px; line-height: 14px; color: #ffffff; text-align: center; margin: 0; display: block;
+	   			@include mainFont(300); 
+	   			a { width: 100%; float: left; display: block; font-size: 30px; line-height: 30px; text-decoration: none; color: #ffffff; margin: 14px 0 0 0;
+	   				@include mainFont(800);
+	   				@include transition(all, 0.2s, ease);
+	   				&:hover { color: $blueLight; font-size: 24px; }
+	   			}
+	   		}
+		}
+	}
+
+	/* ==== INTRODUCTION ==== */
+	section.introWrap { padding: 84px 0;
+		p { font-size: 20px; }
+		.col3 { padding: 0 0 0 30px;
+			@include boxSize(border-box);
+			.button { margin: 100px 0 0 0; font-size: 14px; }
+		}
+	}
+
+	/* ==== SLIDER ==== */
+	section.sliderWrap {
+		.slider-wrapper {
+			.nivoSlider {
+				.nivo-caption { top: 32%;
+					h3 { font-size: 28px; text-align: left; line-height: 32px; }
+					p { display: block; @include mainFont(300); font-size: 14px; line-height: 1.6em; }
+				}
+				.nivo-directionNav {
+					a { top: 90px; bottom: auto; width: 52px; height: 52px; font-size: 20px; line-height: 52px; }
+					.nivo-prevNav { left: 0px; right: auto; }
+					.nivo-nextNav { left: 66px; right: auto; }
+				}
+			}
+			.nivo-controlNav.nivo-thumbs-enabled { width: 48%; position: absolute; z-index: 100; top: 110px; right: 0px; display: block;
+				a { cursor: pointer; width: auto; height: auto; color: $greyDark; font-size: 14px; margin: 0 24px 0 0; display: block; float: left;
+					@include mainFont(300);
+					&:hover { color: $blueLight; }
+					&:last-child { margin: 0; }
+				}
+				a.active { color: $blueLight; }
+			}
+		}
+	}
+
+	/* ==== HIGHLIGHTS ==== */
+	section.highlightsWrap { padding: 84px 0;
+		.row { width: 104%; position: relative; left: -2%; }
+		.col12 { margin: 0 2% !important; }
+		.col4 { margin: 0 2% !important; width: 29.3333336% !important; }
+	}
+
+	/* ==== CLIENT STRIP ==== */
+	aside.clientStrip { border-top: 2px solid $greyLight; }
+
+	/* ==== CONTENT ==== */
+	div.content { margin-top: 40px;
+		.contentHead {
+			h1 { width: auto; }
+			ul { margin: 28px 0 0 0;
+				li { margin: 0 20px 0 0; padding-bottom: 4px;
+					&:first-child { margin-left: 100px; }
+				}
+				li.active { padding: 0 10px 4px 10px;
+					@include rounded(4px, 4px, 0, 0);
+				}
+			}
+		}
+		.contentBody {
+			.catImage {
+				h2 { font-size: 40px; left: 40px; }
+			}
+			.subCatNav { margin: -15px 0 -15px 40px; padding: 0;
+				ul { height: 44px; width: auto;
+					&:before { content: ''; position: absolute; width: 100%; height: 14px; background: url(../img/nav-shadow.png) no-repeat top center; top: 30px; left: 0; }
+					li { width: auto;
+						a { height: 30px; width: auto; line-height: 30px; border-bottom: none; border-right: 1px solid #ffffff;
+							&:hover { background: $greenNew; }
+						}
+						&:last-child { 
+							a { border: none; }
+						}
+					}
+				}
+			}
+			.subCatCont { padding: 20px 40px 40px 40px; }
+		}
+		.contentBody-2 { margin: 0 0 80px 0; }
+		.block { padding: 0 40px; }
+		footer.block { padding: 40px; }
+	}
+
+	/* ==== FOOTER ==== */
+	footer { padding: 40px 0;
+		ul.details { margin: 0 0 10px 0;
+			li { float: left; border-left: 1px solid $greyDark; line-height: 13px; margin: 0 0 0 4px; padding: 0 0 0 4px;
+				strong { margin: 0 6px 0 0; }
+				&:first-child { border-left: none; margin: 0; padding: 0; }
+			}
+		}
+		.footerLogo { float: right; margin: 12px 0 0 0; }
+	}
+
+}
 
 
 /* ================================================================================ */
@@ -596,7 +769,7 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 		.contentHead {
 			h1 { width: auto; }
 			ul { margin: 28px 0 0 0;
-				li { margin: 0 20px 0 0;
+				li { margin: 0 20px 0 0; padding-bottom: 4px;
 					&:first-child { margin-left: 100px; }
 				}
 				li.active { padding: 0 10px 4px 10px;

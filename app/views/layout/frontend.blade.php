@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
@@ -77,7 +75,7 @@
                 </div>
                 <div class="row">
                     <div class="col12">
-                        <div class="contentBody">
+                        <div class="contentBody contentBody-2">
                             <!-- Client Strip -->
                             <aside class="clientStrip block">
                                 <h4>Some of our <span>Clients</span></h4>

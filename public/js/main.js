@@ -138,6 +138,10 @@ cci.go = {
 			} else {
 				h3Top = '3%';
 			}
+
+			if ( $("html").hasClass("ie8") ) {
+				h3Top = '32%';
+			}
 		}
 
 		calcTop();
@@ -223,7 +227,7 @@ cci.go = {
 	navShowHide: function() {
 		var navUl = $('nav ul');
 
-		if ( window.innerWidth > 768 ) {
+		if ( window.innerWidth > 768 || $("html").hasClass("ie8") ) {
 			navUl.show();
 		} else {
 			navUl.hide();
