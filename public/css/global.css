@@ -248,6 +248,9 @@ h4 {
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 700; }
 
+p a {
+  color: #28bddd; }
+
 .button {
   width: auto;
   display: inline-block;
@@ -649,10 +652,13 @@ section.sliderWrap {
 
 /* ==== HIGHLIGHTS ==== */
 section.highlightsWrap {
-  color: #75767c;
-  padding: 40px 0; }
-  section.highlightsWrap .h2 {
-    margin-top: 0; }
+  padding: 40px 0;
+  color: #75767c; }
+  section.highlightsWrap h2 {
+    margin-top: 0;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 700;
+    color: #235da4; }
   section.highlightsWrap .row {
     width: 104%;
     position: relative;
@@ -660,21 +666,46 @@ section.highlightsWrap {
   section.highlightsWrap .col4 {
     margin: 0 2% !important;
     width: 29.3333336% !important; }
-  section.highlightsWrap .highImage {
-    width: 100%;
-    float: left;
-    height: auto;
-    background: #235da4; }
-    section.highlightsWrap .highImage img {
+    section.highlightsWrap .col4 .highImage {
       width: 100%;
+      float: left;
       height: auto;
-      display: block; }
-    section.highlightsWrap .highImage:hover img {
-      opacity: 0.6; }
-  section.highlightsWrap .highWrap {
-    width: 100%;
-    float: left;
-    height: auto; }
+      background: #235da4; }
+      section.highlightsWrap .col4 .highImage img {
+        width: 100%;
+        height: auto;
+        display: block;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -webkit-transition: opacity 0.4s ease 0s;
+        -moz-transition: opacity 0.4s ease 0s;
+        -ms-transition: opacity 0.4s ease 0s;
+        -o-transition: opacity 0.4s ease 0s;
+        transition: opacity 0.4s ease 0s; }
+    section.highlightsWrap .col4 .highWrap {
+      width: 100%;
+      float: left;
+      height: auto; }
+      section.highlightsWrap .col4 .highWrap h4 {
+        text-transform: uppercase;
+        color: #235da4;
+        font-family: 'Merriweather Sans', sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 0; }
+      section.highlightsWrap .col4 .highWrap time {
+        font-size: 12px; }
+      section.highlightsWrap .col4 .highWrap p {
+        font-family: 'Merriweather Sans', sans-serif;
+        font-weight: 300; }
+    section.highlightsWrap .col4:hover .highImage {
+      width: 100%;
+      float: left;
+      height: auto;
+      background: #235da4; }
+      section.highlightsWrap .col4:hover .highImage img {
+        opacity: 0.6; }
 
 /* ==== CONTENT ==== */
 div.content {
