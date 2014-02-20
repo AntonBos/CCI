@@ -5,7 +5,7 @@ class HighlightController extends \BaseController {
 	protected function setupGrid(){
 		
 		Grid::setColumn('name', array('columnName' => 'Name'));
-		Grid::setEnable('enabled');
+		//Grid::setEnable('enabled');
 	}
 
 	public function modelSpecificSteps($action, $params = array()){

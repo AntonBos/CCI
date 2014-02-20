@@ -24,7 +24,11 @@
 
                             <div class="catImage">
                                 <h2>{{ $content->name }}</h2>
-                                <img src="{{ !empty($content->hero_image) ? $content->hero_image : $content->service->hero_image }}" alt="">
+                                @if(!empty($content->hero_image))
+                                <img src="{{ $content->hero_image }}" alt="">
+                                @elseif(!empty($content->service->hero_image))
+                                <img src="{{ $content->service->hero_image }}" alt="">
+                                @endif
                             </div>
                             @if(!empty($layoutSubServices))
                             <div class="subCatNav">

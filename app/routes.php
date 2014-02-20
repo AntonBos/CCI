@@ -134,6 +134,13 @@ Route::get('about/{about?}', function($about = false){
 	return View::make('abouts.view')->with('content', $content);
 });
 
+Route::get('highlights/{highlight?}', function($highlight){
+
+	$content = Highlight::where('slug', $highlight)->first();
+
+	return View::make('highlights.view')->with('content', $content);
+});
+
 Route::get('support', function(){
 
 	return View::make('frontend.support');

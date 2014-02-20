@@ -1,53 +1,23 @@
 @extends('layout.frontend')
 @section('content')
 						<div class="contentHead">
-                            <h1>Services</h1>
-                            <ul>
-                            	<?php
-                            	foreach($layoutAllTopLevelServices as $layoutServiceItem){
-
-                            		if($layoutServiceItem->slug == $layoutTopLevelServiceSlug){
-
-                            			$class = 'class="active"';
-                            		}else{
-
-                            			$class = '';
-                            		}
-
-                            		?><li {{ $class }}><a href="/services/{{ $layoutServiceItem->slug }}">{{ $layoutServiceItem->name }}</a></li><?php
-                            	}
-                            	?>
-                            </ul>
+                            <h1>Highlights</h1>
                         </div>
 
                         <div class="contentBody">
 
                             <div class="catImage">
                                 <h2>{{ $content->name }}</h2>
-                                <img src="{{ !empty($content->hero_image) ? $content->hero_image : $content->service->hero_image }}" alt="">
+                                <img src="/imageuploads/cabling-temp.jpg" alt="">
                             </div>
-                            @if(!empty($layoutSubServices))
-                            <div class="subCatNav">
-                                <ul>
-                                <?php
-                            	foreach($layoutSubServices as $layoutServiceItem){
-
-                            		if($layoutServiceItem->slug == $layoutSubServiceSlug){
-
-                            			$class = 'class="active"';
-                            		}else{
-
-                            			$class = '';
-                            		}
-
-                            		?><li {{ $class }}><a href="/services/{{ $layoutTopLevelService->slug }}/{{ $layoutServiceItem->slug }}">{{ $layoutServiceItem->name }}</a></li><?php
-                            	}
-                            	?>
-                                </ul>
-                            </div>
-                            @endif
                             <div class="subCatCont">
                             	<h1>{{ $content->name }}</h1>
+                                <time>{{ date('j F Y', strtotime($content->date)) }}</time>
+                                @if(!empty($content->hero_image))
+                                <p>
+                                    <img src="{{ $content->hero_image }}" alt="">
+                                </p>
+                                @endif
                             	{{ $content->description }}
                             </div>
                         </div>

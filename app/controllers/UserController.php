@@ -8,7 +8,7 @@ class UserController extends \BaseController {
 		Grid::setColumn('last_name', array('columnName' => 'Surname'));
 		Grid::setColumn('email', array('columnName' => 'email'));
 
-		Grid::setEnable('activated');
+		//Grid::setEnable('activated');
 	}
 
 	public function postStore()

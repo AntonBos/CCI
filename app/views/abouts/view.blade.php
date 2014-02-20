@@ -24,7 +24,7 @@
 
                             <div class="catImage">
                                 <h2>{{ $content->name }}</h2>
-                                <img src="{{ $content->hero_image }}" alt="">
+                                <img src="{{ !empty($content->hero_image) ? $content->hero_image : '/imageuploads/cabling-temp.jpg' }}" alt="">
                             </div>
                             <div class="subCatCont">
                             	<h1>{{ $content->name }}</h1>
