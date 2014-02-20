@@ -25,7 +25,7 @@ class Service extends Ardent {
         parent::__construct();
 
         $this->purgeFilters[] = function($key) {
-            $keep = array('service_id', 'name', 'hero_image', 'short_description', 'description', 'enabled', 'created_at', 'updated_at');
+            $keep = array('service_id', 'name', 'short_description', 'description', 'enabled', 'created_at', 'updated_at');
             return in_array($key, $keep);
         };
     }

@@ -25,7 +25,7 @@ class ContentArea extends Ardent {
         parent::__construct();
 
         $this->purgeFilters[] = function($key) {
-            $keep = array('name', 'description', 'created_at', 'updated_at', 'slug', 'hero_image', 'type');
+            $keep = array('name', 'description', 'created_at', 'updated_at', 'slug', 'type');
             return in_array($key, $keep);
         };
     }

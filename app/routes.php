@@ -79,24 +79,36 @@ Route::get('/logout', function(){
 
 Route::get('services/{service?}/{subService?}', function($service = false, $subService = false) {
 
-	$services = Service::with('services')->isTopLevel()->get();
+	View::share('layoutAllTopLevelServices', Service::with('services')->isTopLevel()->get());
+	$topLevelService = false;
+	$subServices = false;
+	$topLevelServiceSlug = false;
+	$subServiceSlug = false;
 
 	if(!$service){
 
-		$content = ContentArea::where('slug', 'services-main-page')->where('type', 'Page')->first();
+		$content = ContentArea::where('slug', 'services')->where('type', 'Page')->first();
 
 	}else if (!$subService){
 
-		$content = Service::where('slug', $service)->first();
+		$content = Service::with('services')->where('slug', $service)->first();
+		$topLevelService = $content;
+		$subServices = $topLevelService->services;
+		$topLevelServiceSlug = $service;
 
 	}else{
 
 		$content = Service::where('slug', $subService)->first();
+		$topLevelService = Service::where('id', $content->service_id)->first();
+		$subServices = $topLevelService->services;
+		$topLevelServiceSlug = $service;
+		$subServiceSlug = $subService;
 	}
 
-	View::share('layoutService', $service);
-	View::share('layoutSubService', $subService);
-	View::share('layoutServices', $services);
+	View::share('layoutTopLevelService', $topLevelService);
+	View::share('layoutSubServices', $subServices);
+	View::share('layoutTopLevelServiceSlug', $topLevelServiceSlug);
+	View::share('layoutSubServiceSlug', $subServiceSlug);
 
     return View::make('services.view')->with('content', $content);
 });

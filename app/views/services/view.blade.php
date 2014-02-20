@@ -4,9 +4,9 @@
                             <h1>Services</h1>
                             <ul>
                             	<?php
-                            	foreach($layoutServices as $layoutServiceItem){
+                            	foreach($layoutAllTopLevelServices as $layoutServiceItem){
 
-                            		if($layoutServiceItem->slug == $layoutService){
+                            		if($layoutServiceItem->slug == $layoutTopLevelServiceSlug){
 
                             			$class = 'class="active"';
                             		}else{
@@ -26,25 +26,30 @@
                                 <h2>{{ $content->name }}</h2>
                                 <img src="{{ !empty($content->hero_image) ? $content->hero_image : $content->service->hero_image }}" alt="">
                             </div>
-
+                            @if(!empty($layoutSubServices))
                             <div class="subCatNav">
                                 <ul>
-                                    <li><a href="">Rit</a></li>
-                                    <li><a href="">Molex</a></li>
-                                    <li><a href="">Panduit</a></li>
-                                    <li class="active"><a href="">Systimax</a></li>
-                                    <li><a href="">Krone</a></li>
-                                    <li><a href="">ITT Canon</a></li>
+                                <?php
+                            	foreach($layoutSubServices as $layoutServiceItem){
+
+                            		if($layoutServiceItem->slug == $layoutSubServiceSlug){
+
+                            			$class = 'class="active"';
+                            		}else{
+
+                            			$class = '';
+                            		}
+
+                            		?><li {{ $class }}><a href="/services/{{ $layoutTopLevelService->slug }}/{{ $layoutServiceItem->slug }}">{{ $layoutServiceItem->name }}</a></li><?php
+                            	}
+                            	?>
                                 </ul>
                             </div>
-
+                            @endif
                             <div class="subCatCont">
-
-
+                            	<h1>{{ $content->name }}</h1>
+                            	{{ $content->description }}
                             </div>
-
-                            
-
                         </div>
 
 @endsection

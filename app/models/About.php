@@ -25,7 +25,7 @@ class About extends Ardent {
         parent::__construct();
 
         $this->purgeFilters[] = function($key) {
-            $keep = array('about_id', 'name', 'hero_image', 'description', 'enabled', 'created_at', 'updated_at');
+            $keep = array('about_id', 'name', 'description', 'enabled', 'created_at', 'updated_at');
             return in_array($key, $keep);
         };
     }
