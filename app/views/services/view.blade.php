@@ -23,8 +23,8 @@
                         <div class="contentBody">
 
                             <div class="catImage">
-                                <h2>Cabling</h2>
-                                <img src="assets/img/imageuploads/cabling-temp.jpg" alt="">
+                                <h2>{{ $content->name }}</h2>
+                                <img src="{{ !empty($content->hero_image) ? $content->hero_image : $content->service->hero_image }}" alt="">
                             </div>
 
                             <div class="subCatNav">
