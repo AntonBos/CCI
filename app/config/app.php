@@ -109,6 +109,7 @@ return array(
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Basset\BassetServiceProvider',
 		'Io\Grid\GridServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 	),
 
 	/*
@@ -177,6 +178,7 @@ return array(
 		'Sentry' 		  => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Basset' 		  => 'Basset\Facade',
 		'Grid'  		  => 'Io\Grid\Facades\Grid',
+		'Image' 		  => 'Intervention\Image\Facades\Image',
 
 	),
 

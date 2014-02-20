@@ -98,8 +98,10 @@ Route::get('services/{service?}/{subService?}', function($service = false, $subS
 
 	}else{
 
-		$content = Service::where('slug', $subService)->first();
-		$topLevelService = Service::where('id', $content->service_id)->first();
+		$topLevelService = Service::where('slug', $service)->first();
+
+		$content = Service::where('slug', $subService)->where('service_id', $topLevelService->id)->first();
+		
 		$subServices = $topLevelService->services;
 		$topLevelServiceSlug = $service;
 		$subServiceSlug = $subService;
