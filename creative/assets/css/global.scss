@@ -54,10 +54,10 @@ $greyDark 	: #75767c;
 	border-bottom-left-radius: $bottomLeft;
 }
 
-@mixin dropShadow {
-	-moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.4);
-	-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.4);
-	box-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+@mixin dropShadow($hori, $verti, $blur, $spread, $color: rgba(0,0,0,0.4)) {
+	-moz-box-shadow: $hori $verti $blur $spread $color;
+	-webkit-box-shadow: $hori $verti $blur $spread $color;
+	box-shadow: $hori $verti $blur $spread $color;
 }
 
 @mixin textShadow($x, $y, $blur, $color: #000) {
@@ -120,7 +120,9 @@ h4 { font-size: 28px; @include mainFont(300);
 header.home { height: auto; border-bottom: 2px solid #ffffff; position: relative; overflow: hidden; padding: 60px 0 0 0;
 	.container { z-index: 99; }
 	.headerGraphic { position: relative; top: 0; z-index: 0; height: 320px;
-		img { width: 300%; height: auto; display: block; margin: -40px 0 0 -470px; }
+		img { width: 300%; height: auto; display: block; margin: -40px 0 0 -470px;
+			@include transition(all, 0.8s, ease);
+		}
 	}
 	.logo { position: fixed; top: 13px; z-index: 2; left: 20px;
 		img { width: 100%; max-width: 34px; height: auto; display: block; }
@@ -189,12 +191,12 @@ header.other { height: 100px; width: 100%; position: fixed; z-index: 1; top: 0; 
 
 
 /* ==== INTRODUCTION ==== */
-section.introWrap { height: auto; background: $blueMedium; padding: 84px 0; color: #ffffff; position: relative; z-index: 2;
-	@include dropShadow;
+section.introWrap { height: auto; background: $blueMedium; padding: 40px 0; color: #ffffff; position: relative; z-index: 2;
+	@include dropShadow(0px, 0px, 8px, 0px, rgba(0,0,0,0.4));
 	h2 { margin-top: 0; }
-	p { margin: 0; font-size: 20px; line-height: 1.6em; @include mainFont(300); }
+	p { margin: 0; font-size: 18px; line-height: 1.6em; @include mainFont(300); }
 	.col3 { text-align: center;
-		.button { margin: 90px 0 0 0; }
+		.button { margin: 40px 0 0 0; }
 	}
 }
 
@@ -209,28 +211,21 @@ section.sliderWrap { height: auto; background: $offWhite; position: relative; z-
 			.nivo-box { display: lock; position: absolute; z-index: 5; overflow: hidden;
 				img { display: block; }
 			}
-			.nivo-caption { position: absolute; right: 0px; top: 150px; color: $greyDark; width: 48%; z-index: 8; overflow: hidden; display: none;
-				h3 { }
-				p { @include mainFont(300); font-size: 20px; line-height: 1.6em; }
+			.nivo-caption { position: absolute; right: 0px; top: 3%; color: $greyDark; width: 48%; z-index: 8; overflow: hidden; display: none;
+				h3 { font-size: 18px; text-align: center; }
+				p { display: none; }
 			}
 			.nivo-directionNav {
-				a { position: absolute; top: 90px; z-index: 9; cursor: pointer; width: 52px; height: 52px; font-size: 20px; color: $blueLight; display: block; border: 2px solid $blueLight; line-height: 52px; text-align: center;
+				a { position: absolute; bottom: 14px; z-index: 9; cursor: pointer; width: 30px; height: 30px; font-size: 16px; line-height: 30px; color: $blueLight; display: block; border: 2px solid $blueLight; text-align: center;
 					@include rounded(4px, 4px, 4px, 4px);
 					@include transition(all, 0.4s, ease);
 					&:hover { color: $blueMedium; border: 2px solid $blueMedium; }
 				}
-				.nivo-prevNav { left: 0px; }
-				.nivo-nextNav { left: 66px; }
+				.nivo-prevNav { right: 38px; }
+				.nivo-nextNav { right: 0px; }
 			}
 		}
-		.nivo-controlNav.nivo-thumbs-enabled { width: 48%; position: absolute; z-index: 100; top: 110px; right: 0px;
-			a { cursor: pointer; width: auto; height: auto; color: $greyDark; font-size: 14px; margin: 0 24px 0 0; display: block; float: left;
-				@include mainFont(300);
-				&:hover { color: $blueLight; }
-				&:last-child { margin: 0; }
-			}
-			a.active { color: $blueLight; }
-		}
+		.nivo-controlNav.nivo-thumbs-enabled { display: none; }
 		.nivo-html-caption { display: none; }
 	}
 }
@@ -259,7 +254,8 @@ div.content { width: 100%; float: left; position: relative; z-index: 0;
 			}
 		}
 	}
-	.contentBody { background: #ffffff; @include dropShadow; width: 100%; float: left; margin: 0 0 40px 0; position: relative; z-index: 1;
+	.contentBody { background: #ffffff; width: 100%; float: left; margin: 0; position: relative; z-index: 1;
+		@include dropShadow(0px, 0px, 8px, 0px, rgba(0,0,0,0.4));
 		.catImage { width: 100%; height: auto; position: relative; float: left; z-index: 1;
 			h2 { color: #ffffff; position: absolute; z-index: 1; font-size: 20px; @include mainFont(300); left: 20px; }
 			img { width: 100%; height: auto; position: relative; top: 0; display: block; border: 1px solid #ffffff; border-bottom: none; @include boxSize; z-index: 0; }
@@ -296,14 +292,17 @@ div.content { width: 100%; float: left; position: relative; z-index: 0;
 			img { max-width: 100%; height: auto; display: block; }
 		}
 	}
+	.contentBody-2 { margin: 0 0 40px 0;
+		@include dropShadow(0px, 0px, 8px, 0px, rgba(0,0,0,0.4));
+	}
 	.block { padding: 0 20px; @include boxSize; }
-	footer.block { padding: 56px 20px; }
+	footer.block { padding: 36px 20px; }
 }
 
 
 /* ==== CLIENT STRIP ==== */
 aside.clientStrip { height: auto; background: #ffffff; position: relative; z-index: 2;
-	@include dropShadow;
+	@include dropShadow(0px, 0px, 8px, 0px, rgba(0,0,0,0.4));
 	h4 { text-align: center; color: $greyDark; margin-bottom: 0.6em; }
 	h5 { text-align: center; color: $blueLight; font-size: 14px; @include mainFont(300); margin: 0; }
 	.list_carousel { margin: 30px 0; width: 100%;
@@ -317,20 +316,23 @@ aside.clientStrip { height: auto; background: #ffffff; position: relative; z-ind
 
 
 /* ==== FOOTER ==== */
-footer { height: auto; background: $greyLight; position: relative; z-index: 3; padding: 56px 0;
+footer { height: auto; background: $greyLight; position: relative; z-index: 3; padding: 36px 0;
 	h6 { font-size: 20px; @include mainFont(300); color: $greyDark; margin: 0 0 14px 0; }
-	ul.details { margin: 0; padding: 0; list-style: none; width: 100%; float: left;
-		li { float: left; font-size: 13px; @include mainFont(400); border-left: 1px solid $greyDark; color: $greyDark; line-height: 13px; margin: 0 0 0 16px; padding: 0 0 0 16px;
+	ul.details { margin: 0 0 20px 0; padding: 0; list-style: none; width: 100%; float: left;
+		li { font-size: 13px; @include mainFont(400); color: $greyDark; line-height: 20px; margin: 0; padding: 0;
 			strong { @include mainFont(700); margin: 0 14px 0 0; }
 			a { color: $blueDark; @include mainFont(700);
 				&:hover { text-decoration: none; }
 			}
-			&:first-child { border-left: none; margin: 0; padding: 0; }
 		}
 	}
-	p.copyright { font-size: 11px; @include mainFont(300); color: $greyDark; margin: 50px 0 0 0; }
-	.footerLogo { float: right; margin: 12px 0 0 0; }
+	p.copyright { font-size: 11px; @include mainFont(300); color: $greyDark; }
+	.footerLogo { float: left; margin: 20px 0 0 0; width: 100%;
+		img { width: 96%; max-width: 400px; height: auto; display: block; }
+	}
 }
+
+
 
 
 /* ================================================================================ */
@@ -356,38 +358,29 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 	}
 
 	/* ==== HEADER ~ HOME ==== */
-	header.home { height: 518px; padding: 0;
-		.headerGraphic { position: absolute; top: auto; height: auto;
-			img { width: 100%; margin: 0; }
-		}
-		.logo { position: absolute; top: 36px; left: auto;
-			img { max-width: 126px; }
-		}
-		nav { float: right; position: relative; background: none; width: auto; left: auto; height: auto; top: auto;
-			.expander { display: none; }
-			ul { margin: 16px 0 0 0; display: block; width: auto; background: none; position: relative; top: auto;
-				li { font-size: 14px; line-height: 44px; width: auto; margin: 0 0 0 10px; padding: 0 2px; border-bottom: none;
-					@include boxSize;
-					@include rounded(4px, 4px, 4px, 4px);
-					a { color: $blueMedium; text-decoration: none; text-transform: uppercase; padding: 0 20px; display: block; } width: auto;
-					&:hover { line-height: 40px; border: 2px solid $blueMedium; padding: 0; }
-				}
-				li.active { line-height: 40px; border: 2px solid $blueMedium; padding: 0; }
+	header.home {
+		.headerGraphic {
+			img { width: 220%; margin: -80px 0 0 -540px;
+				@include transition(all, 0s, ease);
 			}
-		}
-		.caption { position: absolute; top: auto; bottom: 0; height: auto;
-	   		h1 { font-size: 30px; line-height: 58px; }
-	   		p.cta { font-size: 14px; line-height: 14px; color: #ffffff; text-align: center; margin: 0; display: block;
-	   			@include mainFont(300); 
-	   			a { width: 100%; float: left; display: block; font-size: 30px; line-height: 30px; text-decoration: none; color: #ffffff; margin: 14px 0 0 0;
-	   				@include mainFont(800);
-	   				@include transition(all, 0.2s, ease);
-	   				&:hover { color: $blueLight; font-size: 24px; }
-	   			}
-	   		}
 		}
 	}
 
+	/* ==== SLIDER ==== */
+	section.sliderWrap {
+		.slider-wrapper {
+			.nivoSlider {
+				.nivo-caption { top: 20%;
+					h3 { font-size: 24px; }
+				}
+				.nivo-directionNav {
+					a { width: 52px; height: 52px; font-size: 20px; line-height: 52px; }
+					.nivo-prevNav { right: 66px; }
+				}
+			}
+		}
+	}
+	
 }
 
 /* Browsers > 767 */
@@ -395,6 +388,9 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 	
 	/* ==== RESETS ==== */
 	body.inner { padding: 146px 0 0 0; }
+	
+	/* ==== GENERAL ==== */
+	.button-big { padding: 10px 26px; }
 
 	/* ==== GRID SYSTEM ==== */
 	.container { width: 728px; margin: 0 0 0 -364px;
@@ -414,6 +410,41 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 	    }
 	}
 
+	/* ==== HEADER ~ HOME ==== */
+	header.home { padding: 0;
+		.headerGraphic { height: auto; max-height: 518px;
+			img { width: 100%; margin: 0; }
+		}
+		.container { position: absolute; top: 0; }
+		.logo { position: absolute; top: 36px; left: auto;
+			img { max-width: 126px; }
+		}
+		nav { background: none; float: right; position: relative; width: auto; left: auto; height: auto; top: auto;
+			.expander { display: none; }
+			ul { margin: 16px 0 0 0; display: block; width: auto; background: none; position: relative; top: auto;
+				li { font-size: 14px; line-height: 44px; width: auto; margin: 0 0 0 10px; padding: 0 2px; border-bottom: none;
+					@include boxSize;
+					@include rounded(4px, 4px, 4px, 4px);
+					a { color: $blueMedium; text-decoration: none; text-transform: uppercase; padding: 0 20px; display: block; } width: auto;
+					&:hover { line-height: 40px; border: 2px solid $blueMedium; padding: 0; }
+				}
+				li.active { line-height: 40px; border: 2px solid $blueMedium; padding: 0; }
+			}
+		}
+		.caption { top: auto; bottom: 0; height: auto; padding: 16px 0;
+			.container { position: relative; top: auto; }
+	   		h1 { font-size: 30px; line-height: 58px; }
+	   		p.cta { font-size: 14px; line-height: 14px; color: #ffffff; text-align: center; margin: 0; display: block;
+	   			@include mainFont(300); 
+	   			a { width: 100%; float: left; display: block; font-size: 30px; line-height: 30px; text-decoration: none; color: #ffffff; margin: 14px 0 0 0;
+	   				@include mainFont(800);
+	   				@include transition(all, 0.2s, ease);
+	   				&:hover { color: $blueLight; font-size: 24px; }
+	   			}
+	   		}
+		}
+	}
+
 	/* ==== HEADER ~ OTHER ==== */
 	header.other { height: 146px;
 		.sloganStrip { top: 106px; }
@@ -431,6 +462,32 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 					&:hover { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
 				}
 				li.active { line-height: 30px; border: 2px solid #aac4d0; padding: 0; }
+			}
+		}
+	}
+
+	/* ==== INTRODUCTION ==== */
+	section.introWrap { padding: 84px 0;
+		p { font-size: 20px; }
+		.col3 { padding: 0 0 0 30px;
+			@include boxSize(border-box);
+			.button { margin: 140px 0 0 0; font-size: 14px; }
+		}
+	}
+
+	/* ==== SLIDER ==== */
+	section.sliderWrap {
+		.slider-wrapper {
+			.nivoSlider {
+				.nivo-caption { top: 8%;
+					h3 { font-size: 28px; text-align: left; line-height: 32px; }
+					p { display: block; @include mainFont(300); font-size: 14px; line-height: 1.6em; }
+				}
+				.nivo-directionNav {
+					a { top: 90px; bottom: auto; }
+					.nivo-prevNav { left: 0px; right: auto; }
+					.nivo-nextNav { left: 66px; right: auto; }
+				}
 			}
 		}
 	}
@@ -459,7 +516,9 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 		.block { padding: 0 40px; }
 		footer.block { padding: 56px 40px; }
 	}
-	
+
+	/* ==== FOOTER ==== */
+	footer { padding: 56px 0; }
 
 }
 
@@ -480,6 +539,11 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 		}
 	}
 
+	/* ==== HEADER ~ HOME ==== */
+	header.home {
+		.caption { padding: 32px 0; }
+	}
+
 	/* ==== CONTENT ==== */
 	div.content {
 		.contentHead {
@@ -493,11 +557,23 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 				}
 			}
 		}
-		.contentBody { margin: 0 0 80px 0;
+		.contentBody {
 			.catImage {
 				h2 { font-size: 52px; }
 			}
 		}
+		.contentBody-2 { margin: 0 0 80px 0; }
+	}
+
+	/* ==== FOOTER ==== */
+	footer {
+		ul.details { margin: 0 0 10px 0;
+			li { float: left; border-left: 1px solid $greyDark; line-height: 13px; margin: 0 0 0 4px; padding: 0 0 0 4px;
+				strong { margin: 0 6px 0 0; }
+				&:first-child { border-left: none; margin: 0; padding: 0; }
+			}
+		}
+		.footerLogo { float: right; margin: 12px 0 0 0; }
 	}
 	
 
@@ -508,6 +584,43 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 
 	/* ==== GRID SYSTEM ==== */
 	.container { width: 1180px; margin: 0 0 0 -590px; }
+
+	/* ==== INTRODUCTION ==== */
+	section.introWrap {
+		.col3 { padding: 0;
+			@include boxSize(content-box);
+			.button { margin: 90px 0 0 0; font-size: 18px; }
+		}
+	}
+
+	/* ==== SLIDER ==== */
+	section.sliderWrap {
+		.slider-wrapper {
+			.nivoSlider {
+				.nivo-caption { top: 150px;
+					h3 { font-size: 36px; line-height: 42px; }
+					p { font-size: 20px; }
+				}
+			}
+			.nivo-controlNav.nivo-thumbs-enabled { width: 48%; position: absolute; z-index: 100; top: 110px; right: 0px; display: block;
+				a { cursor: pointer; width: auto; height: auto; color: $greyDark; font-size: 14px; margin: 0 24px 0 0; display: block; float: left;
+					@include mainFont(300);
+					&:hover { color: $blueLight; }
+					&:last-child { margin: 0; }
+				}
+				a.active { color: $blueLight; }
+			}
+		}
+	}
+
+	/* ==== FOOTER ==== */
+	footer {
+		ul.details {
+			li {margin: 0 0 0 16px; padding: 0 0 0 16px;
+				strong { margin: 0 14px 0 0; }
+			}
+		}
+	}
 
 }
 
