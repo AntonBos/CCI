@@ -70,7 +70,7 @@
                 </div>
                 <div class="row">
                     <div class="col12">
-                        <div class="contentBody">
+                        <div class="contentBody contentBody-2">
                             <!-- Client Strip -->
                             <aside class="clientStrip block">
                                 <h4>Some of our <span>Clients</span></h4>
