@@ -113,6 +113,27 @@ Route::get('services/{service?}/{subService?}', function($service = false, $subS
     return View::make('services.view')->with('content', $content);
 });
 
+Route::get('about/{about?}', function($about = false){
+
+	View::share('layoutAllAbouts', About::isEnabled()->get());
+	$aboutSlug = false;
+
+	if(!$about){
+
+		$content = ContentArea::where('slug', 'about')->where('type', 'Page')->first();
+
+	}else{
+
+		$content = About::where('slug', $about)->first();
+
+		$aboutSlug = $content->slug;
+	}
+
+	View::share('layoutAboutSlug', $aboutSlug);
+
+	return View::make('abouts.view')->with('content', $content);
+});
+
 Route::group(array('prefix' => 'admin', 'before' => 'admin'), function()
 {
 

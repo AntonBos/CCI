@@ -35,12 +35,19 @@
 
                         <nav>
                             <div class="expander"><a href="#"><i class="fa fa-bars"></i></a></div>
+                            <?php  
+                            $baseURL = Request::segments()[0];
+                            dd($baseURL);
+                            $mainMenuItems = array('about' => 'About', 'services' => 'Services', 'support' => 'Support', 'contact' => 'Contact');
+                            ?>
                             <ul>
                                 <li><a href="/">Home</a></li>
-                                <li><a href="/about">About</a></li>
-                                <li class="active"><a href="/services">Services</a></li>
-                                <li><a href="/support">Support</a></li>
-                                <li><a href="/contact">Contact</a></li>
+                                <?php
+                                foreach($mainMenuItems as $url => $display){
+
+                                    ?><li><a href="/{{ $url }}" {{ $baseURL == $url ? 'class="active"' : '' }}>{{ $display }}</a></li><?php
+                                }
+                                ?>  
                             </ul>
                         </nav>
                     </div>

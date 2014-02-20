@@ -14,7 +14,7 @@
 							{{ $errors->first('name') }}
 							{{ Form::text('name', $instance->name, array('class' => 'form-control', 'placeholder' => 'Name of About Page')) }}
 						</div>
-						<div class="form-group">
+						<!--<div class="form-group">
 							<?php
 							$abouts = array(0 => 'Top Level About Page');
 
@@ -25,7 +25,7 @@
 							?>
 							{{ Form::label('about_id', 'Parent About Page') }}
 							{{ Form::select('about_id', $abouts, $instance->about_id, array('class' => 'form-control')) }}
-						</div>
+						</div>-->
 						<div class="form-group">
 							{{ Form::label('hero_image', 'Hero Image') }}
 							{{ $errors->first('hero_image') }}

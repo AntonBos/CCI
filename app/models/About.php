@@ -30,7 +30,7 @@ class About extends Ardent {
         };
     }
 
-	public function abouts(){
+	/*public function abouts(){
 
 		return $this->has('About');
 	}
@@ -38,20 +38,16 @@ class About extends Ardent {
 	public function about(){
 
 		return $this->belongsTo('About');
-	}
+	}*/
 
 	public static function boot()
     {
         parent::boot();
 
-        About::creating(function($about)
+        About::saving(function($about)
         {
-        	return self::uploadImage($about);
-        });
-
-        About::updating(function($about)
-        {
-        	return self::uploadImage($about);
+        	self::uploadImage($about);
+        	self::createSlug($about);
         });
     }
 
@@ -66,4 +62,15 @@ class About extends Ardent {
 
     	return true;
 	}
+
+	public static function createSlug($about){
+
+		$about->slug = Str::slug($about->name);
+		return true;
+	}
+
+	public static function scopeIsEnabled($query){
+
+        return $query->whereEnabled('1');
+    }
 }
