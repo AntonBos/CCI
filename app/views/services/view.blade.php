@@ -4,18 +4,24 @@
                             <h1>Services</h1>
                             <ul>
                             	<?php
-                            	foreach($layoutAllTopLevelServices as $layoutServiceItem){
+                                if(!empty($layoutAllTopLevelServices)){
 
-                            		if($layoutServiceItem->slug == $layoutTopLevelServiceSlug){
+                                	foreach($layoutAllTopLevelServices as $layoutServiceItem){
 
-                            			$class = 'class="active"';
-                            		}else{
+                                		if($layoutServiceItem->slug == $layoutTopLevelServiceSlug){
 
-                            			$class = '';
-                            		}
+                                			$class = 'class="active"';
+                                		}else{
 
-                            		?><li {{ $class }}><a href="/services/{{ $layoutServiceItem->slug }}">{{ $layoutServiceItem->name }}</a></li><?php
-                            	}
+                                			$class = '';
+                                		}
+
+                                		?><li {{ $class }}><a href="/services/{{ $layoutServiceItem->slug }}">{{ $layoutServiceItem->name }}</a></li><?php
+                                	}
+                                }else{
+
+                                    ?><li><a href="#">&nbsp;</a></li><?php
+                                }
                             	?>
                             </ul>
                         </div>

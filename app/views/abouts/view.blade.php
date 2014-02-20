@@ -4,18 +4,26 @@
                             <h1>About CCI</h1>
                             <ul>
                             	<?php
-                            	foreach($layoutAllAbouts as $layoutAboutItem){
+                                if(!empty($layoutAllAbouts)){
 
-                            		if($layoutAboutItem->slug == $layoutAboutSlug){
+                                    foreach($layoutAllAbouts as $layoutAboutItem){
 
-                            			$class = 'class="active"';
-                            		}else{
+                                        if($layoutAboutItem->slug == $layoutAboutSlug){
 
-                            			$class = '';
-                            		}
+                                            $class = 'class="active"';
+                                        }else{
 
-                            		?><li {{ $class }}><a href="/about/{{ $layoutAboutItem->slug }}">{{ $layoutAboutItem->name }}</a></li><?php
-                            	}
+                                            $class = '';
+                                        }
+
+                                        ?><li {{ $class }}><a href="/about/{{ $layoutAboutItem->slug }}">{{ $layoutAboutItem->name }}</a></li><?php
+                                    }
+
+                                }else{
+
+                                    ?><li><a href="#">&nbsp;</a></li><?php
+                                }
+                            	
                             	?>
                             </ul>
                         </div>
