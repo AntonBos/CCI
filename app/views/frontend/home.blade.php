@@ -74,14 +74,16 @@
         <section class="highlightsWrap block">
             <div class="container">
 
-                <h2>Highlights</h2>
-
+                <div class="row">
+                    <div class="col12"><h2>Highlights</h2></div>
+                </div>
+                
                 <div class="row">
 
                     <div class="col4">
                         <div class="highImage"><img src="../../imageuploads/highlightImageTest.jpg" alt=""></div>
                         <div class="highWrap">
-                            <h4>Highlight Heading</h4>
+                            <h4><a href="">Highlight Heading</a></h4>
                             <time>20 February 2014</time>
                             <p>Vivamus auctor leo vel dui. <a href="">Aliquam erat volutpat</a>. Phasellus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tempor. Morbi egestas, urna non consequat tempus, nunc arcu mollis enim, eu aliquam erat nulla non nibh. Duis consectetuer malesuada velit. Nam ante nulla, interdum vel, tristique ac, condimentum non, tellus. Proin ornare feugiat nisl. Suspendisse dolor nisl, ultrices at, eleifend vel, consequat at, dolor.</p>
                             <a href="" class="button button-primary">Read More<i class="fa fa-chevron-right"></i></a>
@@ -91,7 +93,7 @@
                     <div class="col4">
                         <div class="highImage"><img src="../../imageuploads/highlightImageTest.jpg" alt=""></div>
                         <div class="highWrap">
-                            <h4>Highlight Heading</h4>
+                            <h4><a href="">Highlight Heading</a></h4>
                             <time>20 February 2014</time>
                             <p>Vivamus auctor leo vel dui. Aliquam erat volutpat. Phasellus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tempor. Morbi egestas, urna non consequat tempus, nunc arcu mollis enim, eu aliquam erat nulla non nibh. Duis consectetuer malesuada velit. Nam ante nulla, interdum vel, tristique ac, condimentum non, tellus. Proin ornare feugiat nisl. Suspendisse dolor nisl, ultrices at, eleifend vel, consequat at, dolor.</p>
                             <a href="" class="button button-primary">Read More<i class="fa fa-chevron-right"></i></a>
@@ -101,7 +103,7 @@
                     <div class="col4">
                         <div class="highImage"><img src="../../imageuploads/highlightImageTest.jpg" alt=""></div>
                         <div class="highWrap">
-                            <h4>Highlight Heading</h4>
+                            <h4><a href="">Highlight Heading</a></h4>
                             <time>20 February 2014</time>
                             <p>Vivamus auctor leo vel dui. Aliquam erat volutpat. Phasellus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tempor. Morbi egestas, urna non consequat tempus, nunc arcu mollis enim, eu aliquam erat nulla non nibh. Duis consectetuer malesuada velit. Nam ante nulla, interdum vel, tristique ac, condimentum non, tellus. Proin ornare feugiat nisl. Suspendisse dolor nisl, ultrices at, eleifend vel, consequat at, dolor.</p>
                             <a href="" class="button button-primary">Read More<i class="fa fa-chevron-right"></i></a>

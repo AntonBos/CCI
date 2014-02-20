@@ -64,6 +64,12 @@ $greyDark 	: #75767c;
 	text-shadow: $x $y $blur $color;
 }
 
+@mixin backFace {
+	-webkit-backface-visibility: hidden;
+  	-moz-backface-visibility: hidden;
+  	-ms-backface-visibility: hidden;
+}
+
 
 /* ==== RESETS ==== */
 body { line-height: 1.6em; @include mainFont(400); }
@@ -85,6 +91,11 @@ h3 { font-size: 36px; @include mainFont(700);
 }
 h4 { font-size: 28px; @include mainFont(300);
 	span { @include mainFont(700); }
+}
+p {
+	a { color: $blueLight;
+		&:hover { text-decoration: none; }
+	}
 }
 
 .button { width: auto; display: inline-block; border: 2px solid $greyDark; text-align: center; padding: 6px 10px; color: $greyDark; text-decoration: none; font-size: 18px;
@@ -232,20 +243,30 @@ section.sliderWrap { height: auto; background: $offWhite; position: relative; z-
 
 
 /* ==== HIGHLIGHTS ==== */
-section.highlightsWrap { color: $greyDark; padding: 40px 0;
-	.h2 { margin-top: 0; }
-	.row { width: 104%; position: relative; left: -2%; }
-	.col4 { margin: 0 2% !important; width: 29.3333336% !important; }
-	.highImage { width: 100%; float: left; height: auto; background: $blueMedium;
-		img { width: 100%; height: auto; display: block; }
-		&:hover {
-			img { opacity: 0.6; }
+section.highlightsWrap { padding: 40px 0; color: $greyDark;
+	h2 { margin-top: 0; @include mainFont(700); color: $blueMedium; }
+	.col4 { margin: 0 0 30px 0 !important; width: 100% !important;
+		.highImage { width: 100%; float: left; height: auto; background: $blueMedium;
+			img { width: 100%; height: auto; display: block;
+				@include backFace;
+				@include transition(opacity, 0.4s, ease);
+			}
 		}
-	}
-	.highWrap { width: 100%; float: left; height: auto;
-		h4 { }
-		time { }
-		p { }
+		.highWrap { width: 100%; float: left; height: auto;
+			h4 { text-transform: uppercase; color: $blueMedium; @include mainFont(700); font-size: 22px; margin-bottom: 0;
+				a { color: $blueMedium; text-decoration: none;
+					@include transition(color, 0.4s, ease);
+					&:hover { color: $blueLight; }
+				}
+			}
+			time { font-size: 12px; }
+			p { @include mainFont(300); }
+		}
+		&:hover {
+			.highImage { width: 100%; float: left; height: auto; background: $blueMedium;
+				img { opacity: 0.6; }
+			}
+		}
 	}
 }
 
@@ -509,6 +530,13 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 				}
 			}
 		}
+	}
+
+	/* ==== HIGHLIGHTS ==== */
+	section.highlightsWrap { padding: 84px 0;
+		.row { width: 104%; position: relative; left: -2%; }
+		.col12 { margin: 0 2% !important; }
+		.col4 { margin: 0 2% !important; width: 29.3333336% !important; }
 	}
 
 	/* ==== CONTENT ==== */
