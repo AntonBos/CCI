@@ -77,13 +77,28 @@ Route::get('/logout', function(){
 
 });
 
-Route::get('courses/{categorySlug}/{slug?}', function($categorySlug, $slug) {
-    $course = Course::leftJoin('categories', 'categories.id', 'courses.category_id')
-        ->where('categories.slug', $categorySlug)
-        ->where('courses.slug', $slug)
-        ->firstOrFail();
+Route::get('services/{service?}/{subService?}', function($service = false, $subService = false) {
 
-    return View::make('courses.show')->with('course', $course);
+	$services = Service::with('services')->isTopLevel()->get();
+
+	if(!$service){
+
+		$content = ContentArea::where('slug', 'services-main-page')->where('type', 'Page')->first();
+
+	}else if (!$subService){
+
+		$content = Service::where('slug', $service)->first();
+
+	}else{
+
+		$content = Service::where('slug', $subService)->first();
+	}
+
+	View::share('layoutService', $service);
+	View::share('layoutSubService', $subService);
+	View::share('layoutServices', $services);
+
+    return View::make('services.view')->with('content', $content);
 });
 
 Route::group(array('prefix' => 'admin', 'before' => 'admin'), function()

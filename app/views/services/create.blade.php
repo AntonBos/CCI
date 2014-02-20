@@ -29,7 +29,7 @@
 						<div class="form-group">
 							{{ Form::label('hero_image', 'Hero Image') }}
 							{{ $errors->first('hero_image') }}
-							{{ Form::file('hero_image', $instance->hero_image, array('class' => 'form-control')) }}
+							{{ Form::file('hero_image'/*, $instance->hero_image*/, array('class' => 'form-control')) }}
 						</div>
 						<div class="form-group">
 							{{ Form::label('short_description', 'Short description of Service') }}

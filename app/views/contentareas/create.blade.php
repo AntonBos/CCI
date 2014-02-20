@@ -1,9 +1,9 @@
 @extends('layout.admin')
 @section('content')
 			@if(!$instance->id)
-		    {{ Form::model($instance, array('url' => URL::action('ContentAreaController@postStore'))) }}
+		    {{ Form::model($instance, array('url' => URL::action('ContentAreaController@postStore'), 'files' => true)) }}
 		    @else
-		    {{ Form::model($instance, array('url' => URL::action('ContentAreaController@postUpdate', $instance->id))) }}
+		    {{ Form::model($instance, array('url' => URL::action('ContentAreaController@postUpdate', $instance->id), 'files' => true)) }}
 		    @endif
 			<div class="row">
 				<div class="col-md-6">
@@ -15,9 +15,21 @@
 							{{ Form::text('name', $instance->name, array('class' => 'form-control', 'placeholder' => 'Name of Content Area')) }}
 						</div>
 						<div class="form-group">
+							<?php
+							$types = array('Content Area' => 'Content Area', 'Page' => 'Page');
+							?>
+							{{ Form::label('type', 'Type of Content Area') }}
+							{{ Form::select('type', $types, $instance->type, array('class' => 'form-control')) }}
+						</div>
+						<div class="form-group">
 							{{ Form::label('description', 'Content Area Content') }}
 							{{ $errors->first('description') }}
 							{{ Form::textarea('description', $instance->description, array('id' => 'descriptionTextarea', 'class' => 'form-control', 'placeholder' => 'Content of the Content Area')) }}
+						</div>
+						<div class="form-group">
+							{{ Form::label('hero_image', 'Hero Image') }}
+							{{ $errors->first('hero_image') }}
+							{{ Form::file('hero_image'/*, $instance->hero_image*/, array('class' => 'form-control')) }}
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary">Submit</button>

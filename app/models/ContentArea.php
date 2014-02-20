@@ -25,7 +25,7 @@ class ContentArea extends Ardent {
         parent::__construct();
 
         $this->purgeFilters[] = function($key) {
-            $keep = array('name', 'description', 'created_at', 'updated_at');
+            $keep = array('name', 'description', 'created_at', 'updated_at', 'slug', 'hero_image', 'type');
             return in_array($key, $keep);
         };
     }
@@ -35,30 +35,34 @@ class ContentArea extends Ardent {
         return self::where('name', $name)->first();
     }
 
-	/*public static function boot()
+	public static function boot()
     {
         parent::boot();
 
-        About::creating(function($about)
+        ContentArea::saving(function($contentArea)
         {
-        	return self::uploadImage($about);
-        });
+            self::uploadImage($contentArea);
+            self::createSlug($contentArea);
 
-        About::updating(function($about)
-        {
-        	return self::uploadImage($about);
+            return true;
         });
     }
 
-    public static function uploadImage($about){
+    public static function uploadImage($contentArea){
 
-		if (Input::hasFile('hero_image')){
+        if (Input::hasFile('hero_image')){
 
-			$fileName = Input::file('hero_image')->getClientOriginalName();
-			$path =  Input::file('hero_image')->move(public_path().'/imageuploads', $fileName)->getRealPath();
-			$about->hero_image = '/imageuploads/' . $fileName;
-		}
+            $fileName = Input::file('hero_image')->getClientOriginalName();
+            $path =  Input::file('hero_image')->move(public_path().'/imageuploads', $fileName)->getRealPath();
+            $contentArea->hero_image = '/imageuploads/' . $fileName;
+        }
 
-    	return true;
-	}*/
+        return true;
+    }
+
+    public static function createSlug($contentArea){
+
+        $contentArea->slug = Str::slug($contentArea->name);
+        return true;
+    }
 }

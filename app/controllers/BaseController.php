@@ -106,6 +106,7 @@ class BaseController extends Controller {
 		$instance = new $this->modelName;
 
 		$instance = $instance->find($id);
+
 		return View::make($this->modelNamePluralLowerCase . '.create', compact('instance'), array('pageHeading' => empty($this->pageHeading) ? str_plural($this->modelName) : $this->pageHeading ));
 	}
 

@@ -24,7 +24,7 @@
 					<li><a href="/admin/users"><span class="glyphicon glyphicon-user"></span>Users</a></li>
 					<li><a href="/admin/services"><span class="glyphicon glyphicon-align-right"></span> Services</a></li>
 					<li><a href="/admin/about-pages"><span class="glyphicon glyphicon-book"></span> About Pages</a></li>
-					<li><a href="/admin/content-areas"><span class="glyphicon glyphicon-book"></span> Content Areas</a></li>
+					<li><a href="/admin/content-areas"><span class="glyphicon glyphicon-book"></span> Pages and Content Areas</a></li>
 					
 				</li>
 			</ul>

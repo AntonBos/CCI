@@ -5,6 +5,7 @@ class ContentAreaController extends \BaseController {
 	protected function setupGrid(){
 		
 		Grid::setColumn('name', array('columnName' => 'Name'));
+		Grid::setColumn('type', array('columnName' => 'Type'));
 	}
 
 	public function modelSpecificSteps($action, $params = array()){

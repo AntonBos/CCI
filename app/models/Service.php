@@ -32,7 +32,7 @@ class Service extends Ardent {
 
 	public function services(){
 
-		return $this->has('Service');
+		return $this->hasMany('Service');
 	}
 
 	public function service(){
