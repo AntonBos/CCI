@@ -1378,7 +1378,8 @@ footer {
   div.content .contentHead ul {
     margin: 28px 0 0 0; }
     div.content .contentHead ul li {
-      margin: 0 20px 0 0; }
+      margin: 0 20px 0 0;
+      padding-bottom: 4px; }
       div.content .contentHead ul li:first-child {
         margin-left: 100px; }
     div.content .contentHead ul li.active {

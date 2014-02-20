@@ -596,7 +596,7 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 		.contentHead {
 			h1 { width: auto; }
 			ul { margin: 28px 0 0 0;
-				li { margin: 0 20px 0 0;
+				li { margin: 0 20px 0 0; padding-bottom: 4px;
 					&:first-child { margin-left: 100px; }
 				}
 				li.active { padding: 0 10px 4px 10px;
