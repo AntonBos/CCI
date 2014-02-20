@@ -16,7 +16,7 @@
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
         <!--[if lt IE 9]> <script src="/js/vendor/selectivizr-min.js"></script> <![endif]-->
     </head>
-	<body>
+	<body class="inner">
         
         <!-- Header -->
         <header class="other block">
