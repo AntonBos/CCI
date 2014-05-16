@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700,800);
 /*! normalize.css v1.1.2 | MIT License | git.io/normalize */
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700,800);
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
 
@@ -303,6 +303,17 @@ p a {
     color: #1fa9c7;
     border-color: #1fa9c7; }
 
+table p {
+  margin: 0;
+  font-size: 14px; }
+table th, table td {
+  border: 1px solid #e8e8e8;
+  padding: 10px;
+  text-align: left; }
+table th {
+  background: #e8e8e8;
+  border-color: #cfcfcf; }
+
 /* ==== GRID SYSTEM ==== */
 .container {
   width: 100%;
@@ -554,11 +565,15 @@ section.introWrap {
   section.introWrap h2 {
     margin-top: 0; }
   section.introWrap p {
-    margin: 0;
     font-size: 18px;
     line-height: 1.6em;
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 300; }
+  section.introWrap ul li {
+    font-size: 18px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6em; }
   section.introWrap .col3 {
     text-align: center; }
     section.introWrap .col3 .button {
@@ -876,9 +891,10 @@ div.content {
       div.content .contentBody .subCatCont h1 {
         color: #0371a4;
         text-transform: uppercase;
-        font-size: 44px;
+        font-size: 28px;
         font-family: 'Merriweather Sans', sans-serif;
-        font-weight: 800; }
+        font-weight: 800;
+        line-height: normal; }
       div.content .contentBody .subCatCont h2 {
         font-family: 'Merriweather Sans', sans-serif;
         font-weight: 300; }
@@ -1232,13 +1248,15 @@ footer {
     padding: 84px 0; }
     .ie8 section.introWrap p {
       font-size: 20px; }
+    .ie8 section.introWrap ul li {
+      font-size: 20px; }
     .ie8 section.introWrap .col3 {
       padding: 0 0 0 30px;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
       .ie8 section.introWrap .col3 .button {
-        margin: 100px 0 0 0;
+        margin: 280px 0 0 0;
         font-size: 14px; }
   .ie8 section.sliderWrap .slider-wrapper .nivoSlider .nivo-caption {
     top: 32%; }
@@ -1358,6 +1376,8 @@ footer {
             border: none; }
     .ie8 div.content .contentBody .subCatCont {
       padding: 20px 40px 40px 40px; }
+      .ie8 div.content .contentBody .subCatCont h1 {
+        font-size: 44px; }
     .ie8 div.content .contentBody-2 {
       margin: 0 0 80px 0; }
     .ie8 div.content .block {
@@ -1644,13 +1664,15 @@ footer {
     padding: 84px 0; }
     section.introWrap p {
       font-size: 20px; }
+    section.introWrap ul li {
+      font-size: 20px; }
     section.introWrap .col3 {
       padding: 0 0 0 30px;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
       section.introWrap .col3 .button {
-        margin: 140px 0 0 0;
+        margin: 280px 0 0 0;
         font-size: 14px; }
 
   /* ==== SLIDER ==== */
@@ -1721,6 +1743,8 @@ footer {
           border: none; }
   div.content .contentBody .subCatCont {
     padding: 20px 40px 40px 40px; }
+    div.content .contentBody .subCatCont h1 {
+      font-size: 36px; }
   div.content .block {
     padding: 0 40px; }
   div.content footer.block {
@@ -1770,6 +1794,8 @@ footer {
       border-bottom-left-radius: 0; }
   div.content .contentBody .catImage h2 {
     font-size: 52px; }
+  div.content .contentBody .subCatCont h1 {
+    font-size: 44px; }
   div.content .contentBody-2 {
     margin: 0 0 80px 0; }
 
@@ -1805,7 +1831,7 @@ footer {
     -moz-box-sizing: content-box;
     box-sizing: content-box; }
     section.introWrap .col3 .button {
-      margin: 90px 0 0 0;
+      margin: 230px 0 0 0;
       font-size: 18px; }
 
   /* ==== SLIDER ==== */
