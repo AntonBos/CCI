@@ -37,6 +37,11 @@
 							{{ Form::textarea('description', $instance->description, array('id' => 'descriptionTextarea', 'class' => 'form-control', 'placeholder' => 'Content of the service page')) }}
 						</div>
 						<div class="form-group">
+							{{ Form::label('order_by', 'Order By') }}
+							{{ $errors->first('order_by') }}
+							{{ Form::text('order_by', $instance->order_by, array('class' => 'form-control', 'placeholder' => 'Order of the service page')) }}
+						</div>
+						<div class="form-group">
 							{{ Form::label('enabled', 'Enabled') }}
 							{{ $errors->first('enabled') }}
 							{{ Form::radio('enabled', 1, $instance->enabled); }} Yes

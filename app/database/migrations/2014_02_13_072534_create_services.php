@@ -19,6 +19,7 @@ class CreateServices extends Migration {
 		    $table->string('name');
 		    $table->string('hero_image');
 		    $table->text('description');
+		    $table->string('order_by');
 		    $table->boolean('enabled');
 		    $table->timestamps();
 		});
@@ -30,6 +31,7 @@ class CreateServices extends Migration {
 		    $table->string('name');
 		    $table->string('hero_image');
 		    $table->text('description');
+		    $table->string('order_by');
 		    $table->boolean('enabled');
 		    $table->timestamps();
 		});

@@ -17,7 +17,8 @@ class Service extends Ardent {
 
 	public static $rules = array(
 		'description' => 'required',
-		'name' => 'required'
+		'name' => 'required',
+		'order_by' => 'required|numeric'
     );
 
     public function __construct()
@@ -25,14 +26,14 @@ class Service extends Ardent {
         parent::__construct();
 
         $this->purgeFilters[] = function($key) {
-            $keep = array('service_id', 'name', 'short_description', 'description', 'enabled', 'created_at', 'updated_at');
+            $keep = array('service_id', 'name', 'short_description', 'description', 'enabled', 'created_at', 'updated_at', 'order_by');
             return in_array($key, $keep);
         };
     }
 
 	public function services(){
 
-		return $this->hasMany('Service');
+		return $this->hasMany('Service')->orderBy('order_by', 'ASC');
 	}
 
 	public function service(){

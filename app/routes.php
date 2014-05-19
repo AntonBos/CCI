@@ -79,7 +79,7 @@ Route::get('/logout', function(){
 
 Route::get('services/{service?}/{subService?}', function($service = false, $subService = false) {
 
-	View::share('layoutAllTopLevelServices', Service::with('services')->isTopLevel()->get());
+	View::share('layoutAllTopLevelServices', Service::with('services')->isTopLevel()->orderBy('order_by', 'ASC')->get());
 	$topLevelService = false;
 	$subServices = false;
 	$topLevelServiceSlug = false;
@@ -117,7 +117,7 @@ Route::get('services/{service?}/{subService?}', function($service = false, $subS
 
 Route::get('about/{about?}', function($about = false){
 
-	View::share('layoutAllAbouts', About::isEnabled()->get());
+	View::share('layoutAllAbouts', About::isEnabled()->orderBy('order_by', 'ASC')->get());
 	$aboutSlug = false;
 
 	if(!$about){
@@ -143,9 +143,16 @@ Route::get('highlights/{highlight?}', function($highlight){
 	return View::make('highlights.view')->with('content', $content);
 });
 
-Route::get('support', function(){
+Route::get('black-empowerment', function(){
 
-	return View::make('frontend.support');
+	$content = ContentArea::where('slug', 'black-empowerment')->first();
+	return View::make('contentareas.view')->with('content', $content);
+});
+
+Route::get('news', function(){
+
+	$highlights = Highlight::orderBy('created_at', 'DESC')->get();
+	return View::make('highlights.list')->with('highlights', $highlights);
 });
 
 Route::get('contact', function(){
