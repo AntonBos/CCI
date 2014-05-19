@@ -86,7 +86,7 @@
                     <div class="col4">
                         <div class="highImage"><img src="{{ $highlight->hero_image }}" alt=""></div>
                         <div class="highWrap">
-                            <h4><a href="">{{ $highlight->name }}</a></h4>
+                            <h4><a href="/highlights/{{ $highlight->slug }}">{{ $highlight->name }}</a></h4>
                             <time>{{ date('j F Y', strtotime($highlight->date)) }}</time>
                             <p>{{ $highlight->short_description }}</p>
                             <a href="/highlights/{{ $highlight->slug }}" class="button button-primary">Read More<i class="fa fa-chevron-right"></i></a>
