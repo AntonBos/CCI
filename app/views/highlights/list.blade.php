@@ -1,27 +1,37 @@
 @extends('layout.frontend')
 @section('content')
-        @if(!empty($highlights))
-        <section class="highlightsWrap block">
-            <div class="container">
+        <div class="contentHead">
+            <h1>Latest News</h1>
+            <ul><li><a href="#">&nbsp;</a></li></ul>
+        </div>
 
-                <div class="row">
-                    <div class="col12"><h2>Highlights</h2></div>
-                </div>
-                
-                <div class="row">
-                @foreach($highlights as $highlight)
-                    <div class="col4">
-                        <div class="highImage"><img src="{{ $highlight->hero_image }}" alt=""></div>
-                        <div class="highWrap">
-                            <h4><a href="">{{ $highlight->name }}</a></h4>
-                            <time>{{ date('j F Y', strtotime($highlight->date)) }}</time>
-                            <p>{{ $highlight->short_description }}</p>
-                            <a href="/highlights/{{ $highlight->slug }}" class="button button-primary">Read More<i class="fa fa-chevron-right"></i></a>
+        <div class="contentBody">
+            
+            <div class="catImage"></div>
+            <div class="subCatCont" style="padding: 40px 0px 10px 0;">
+                <?php
+                $highlights = Highlight::isEnabled()->orderBy('date', 'DESC')->get();
+                ?>
+                @if(!empty($highlights))
+                <section class="highlightsWrap block">
+                        
+                        <div class="row">
+                        @foreach($highlights as $highlight)
+                            <div class="col4">
+                                <div class="highImage"><img src="{{ $highlight->hero_image }}" alt=""></div>
+                                <div class="highWrap" style="margin-bottom: 30px;">
+                                    <h4><a href="/highlights/{{ $highlight->slug }}">{{ $highlight->name }}</a></h4>
+                                    <time>{{ date('j F Y', strtotime($highlight->date)) }}</time>
+                                    <p>{{ $highlight->short_description }}</p>
+                                    <a href="/highlights/{{ $highlight->slug }}" class="button button-primary">Read More<i class="fa fa-chevron-right"></i></a>
+                                </div>
+                            </div>
+                        @endforeach
                         </div>
-                    </div>
-                @endforeach
-                </div>
+
+                </section>
+                @endif
             </div>
-        </section>
-        @endif
+        
+        </div>
 @endsection
