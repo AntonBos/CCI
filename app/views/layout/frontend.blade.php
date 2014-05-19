@@ -36,7 +36,7 @@
                             <?php  
                             $baseURL = Request::segments()[0];
                             //dd($baseURL);
-                            $mainMenuItems = array('about' => 'About', 'services' => 'Services', 'black-empowerment' => 'Black Empowerment', 'news' => 'News', 'contact' => 'Contact');
+                            $mainMenuItems = array('about' => 'About', 'services' => 'Services', 'black-empowerment' => 'BEE', 'news' => 'News', 'contact' => 'Contact');
                             ?>
                             <ul>
                                 <li><a href="/">Home</a></li>
