@@ -23,7 +23,7 @@
                 <div class="row">
                     
                     <div class="col12">
-                        <div class="logo"><a href="#"><img src="/img/CCI-logo-color.svg" alt="CCI - Providers of IT Connectivity Solutions"></a></div>
+                        <div class="logo"><a href="/"><img src="/img/CCI-logo-color.svg" alt="CCI - Providers of IT Connectivity Solutions"></a></div>
 
                         <ul class="socialBar">
                             <li><a href=""><i class="fa fa-facebook-square"></i></a></li>
