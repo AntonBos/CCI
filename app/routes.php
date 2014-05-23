@@ -160,6 +160,11 @@ Route::get('contact', function(){
 	return View::make('frontend.contact');
 });
 
+Route::get('test', function(){
+
+	return View::make('frontend.test');
+});
+
 Route::group(array('prefix' => 'admin', 'before' => 'admin'), function()
 {
 
