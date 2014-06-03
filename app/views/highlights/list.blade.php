@@ -2,7 +2,9 @@
 @section('content')
         <div class="contentHead">
             <h1>Latest News</h1>
-            <ul><li><a href="#">&nbsp;</a></li></ul>
+            <ul>
+                <li class="empty-item"><a href="#">&nbsp;</a></li>
+            </ul>
         </div>
 
         <div class="contentBody">
