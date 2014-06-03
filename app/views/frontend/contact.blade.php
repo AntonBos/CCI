@@ -2,13 +2,14 @@
 @section('content')
 						<div class="contentHead">
                             <h1>Contact</h1>
-                            <ul><li><a href="#">&nbsp;</a></li></ul>
+                            <ul>
+                                <li class="empty-item"><a href="#">&nbsp;</a></li>
+                            </ul>
                         </div>
 
                         <div class="contentBody">
 
                             <div class="catImage">
-                                <h2>Contact</h2>
                                 <img src="/imageuploads/cabling-temp.jpg" alt="">
                             </div>
                             <div class="subCatCont">
