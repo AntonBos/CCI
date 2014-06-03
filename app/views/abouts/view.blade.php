@@ -2,30 +2,22 @@
 @section('content')
 						<div class="contentHead">
                             <h1>About CCI</h1>
+                        <?php if( !empty($layoutAllAbouts) && count($layoutAllAbouts) >= 1 ) { ?>
                             <ul>
-                            	<?php
-                                if(!empty($layoutAllAbouts)){
-
-                                    foreach($layoutAllAbouts as $layoutAboutItem){
-
-                                        if($layoutAboutItem->slug == $layoutAboutSlug){
-
-                                            $class = 'class="active"';
-                                        }else{
-
-                                            $class = '';
-                                        }
-
-                                        ?><li {{ $class }}><a href="/about/{{ $layoutAboutItem->slug }}">{{ $layoutAboutItem->name }}</a></li><?php
-                                    }
-
-                                }else{
-
-                                    ?><li class="empty-item"><a href="#">&nbsp;</a></li><?php
-                                }
-                            	
-                            	?>
+                            <?php foreach( $layoutAllAbouts as $layoutAboutItem ) {
+                                if ( $layoutAboutItem->slug == $layoutAboutSlug) {
+                                    $class = 'class="active"';
+                                } else {
+                                    $class = '';
+                                } ?>
+                                <li {{ $class }}><a href="/about/{{ $layoutAboutItem->slug }}">{{ $layoutAboutItem->name }}</a></li>
+                            <?php } ?>
                             </ul>
+                        <?php } else { ?>
+                            <ul>
+                                <li class="empty-item"><a href="#">&nbsp;</a></li>
+                            </ul>
+                        <?php } ?>
                         </div>
 
                         <div class="contentBody">
