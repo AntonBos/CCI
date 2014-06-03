@@ -756,26 +756,9 @@ div.content {
       float: left; }
       div.content .contentHead ul li {
         float: left;
-        margin: 0 20px 10px 0; }
-        div.content .contentHead ul li a {
-          text-decoration: none;
-          color: #ffffff;
-          text-transform: uppercase;
-          font-size: 12px;
-          position: relative;
-          top: 0;
-          text-shadow: 0px 0px 4px black;
-          font-family: 'Merriweather Sans', sans-serif;
-          font-weight: 300;
-          -webkit-transition: top 0.2s ease 0s;
-          -moz-transition: top 0.2s ease 0s;
-          -ms-transition: top 0.2s ease 0s;
-          -o-transition: top 0.2s ease 0s;
-          transition: top 0.2s ease 0s; }
-          div.content .contentHead ul li a:hover {
-            top: -3px; }
-      div.content .contentHead ul li.active {
-        background: #ffffff;
+        margin: 0 20px 10px 0;
+        background: white;
+        background: rgba(255, 255, 255, 0.3);
         padding: 0 10px;
         -webkit-border-top-left-radius: 4px;
         -webkit-border-top-right-radius: 4px;
@@ -788,7 +771,29 @@ div.content {
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
-        border-bottom-left-radius: 4px; }
+        border-bottom-left-radius: 4px;
+        -webkit-transition: background 0.4s ease 0s;
+        -moz-transition: background 0.4s ease 0s;
+        -ms-transition: background 0.4s ease 0s;
+        -o-transition: background 0.4s ease 0s;
+        transition: background 0.4s ease 0s; }
+        div.content .contentHead ul li a {
+          text-decoration: none;
+          color: #ffffff;
+          text-transform: uppercase;
+          font-size: 12px;
+          position: relative;
+          top: 0;
+          text-shadow: 0px 0px 4px black;
+          font-family: 'Merriweather Sans', sans-serif;
+          font-weight: 300; }
+        div.content .contentHead ul li:hover {
+          background: white;
+          background: rgba(255, 255, 255, 0.5); }
+      div.content .contentHead ul li.empty-item {
+        background: none; }
+      div.content .contentHead ul li.active {
+        background: #ffffff; }
         div.content .contentHead ul li.active a {
           color: #223e92;
           text-shadow: 0px 0px 0 black;
@@ -1328,10 +1333,6 @@ footer {
       margin: 28px 0 0 0; }
       .ie8 div.content .contentHead ul li {
         margin: 0 20px 0 0;
-        padding-bottom: 4px; }
-        .ie8 div.content .contentHead ul li:first-child {
-          margin-left: 100px; }
-      .ie8 div.content .contentHead ul li.active {
         padding: 0 10px 4px 10px;
         -webkit-border-top-left-radius: 4px;
         -webkit-border-top-right-radius: 4px;
@@ -1345,6 +1346,8 @@ footer {
         border-top-right-radius: 4px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0; }
+        .ie8 div.content .contentHead ul li:first-child {
+          margin-left: 100px; }
     .ie8 div.content .contentBody .catImage h2 {
       font-size: 40px;
       left: 40px; }
@@ -1775,10 +1778,6 @@ footer {
     margin: 28px 0 0 0; }
     div.content .contentHead ul li {
       margin: 0 20px 0 0;
-      padding-bottom: 4px; }
-      div.content .contentHead ul li:first-child {
-        margin-left: 100px; }
-    div.content .contentHead ul li.active {
       padding: 0 10px 4px 10px;
       -webkit-border-top-left-radius: 4px;
       -webkit-border-top-right-radius: 4px;
@@ -1792,6 +1791,8 @@ footer {
       border-top-right-radius: 4px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0; }
+      div.content .contentHead ul li:first-child {
+        margin-left: 100px; }
   div.content .contentBody .catImage h2 {
     font-size: 52px; }
   div.content .contentBody .subCatCont h1 {
