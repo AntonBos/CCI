@@ -21,7 +21,7 @@
 
                                 }else{
 
-                                    ?><li><a href="#">&nbsp;</a></li><?php
+                                    ?><li class="empty-item"><a href="#">&nbsp;</a></li><?php
                                 }
                             	
                             	?>
@@ -31,7 +31,6 @@
                         <div class="contentBody">
 
                             <div class="catImage">
-                                <h2>{{ $content->name }}</h2>
                                 <img src="{{ !empty($content->hero_image) ? /*Image::make(Request::root().$content->hero_image)->crop(1024,240)->encode('png', 75)*/ $content->hero_image : '/imageuploads/cabling-temp.jpg' }}" alt="">
                             </div>
                             <div class="subCatCont">
