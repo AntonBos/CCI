@@ -9,9 +9,7 @@
 
                         <div class="contentBody">
 
-                            <div class="catImage">
-                                <img src="/imageuploads/cabling-temp.jpg" alt="">
-                            </div>
+                            <div class="catImage"></div>
                             <div class="subCatCont">
                             	<h1>{{ $content->name }}</h1>
                                 <time>{{ date('j F Y', strtotime($content->date)) }}</time>
