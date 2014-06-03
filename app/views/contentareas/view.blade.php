@@ -1,35 +1,15 @@
 @extends('layout.frontend')
 @section('content')
-						<!--<div class="contentHead">
-                            <h1>Services</h1>
+						<div class="contentHead">
+                            <h1>{{ $content->name }}</h1>
                             <ul>
-                            	<?php
-                                if(!empty($layoutAllTopLevelServices)){
-
-                                	foreach($layoutAllTopLevelServices as $layoutServiceItem){
-
-                                		if($layoutServiceItem->slug == $layoutTopLevelServiceSlug){
-
-                                			$class = 'class="active"';
-                                		}else{
-
-                                			$class = '';
-                                		}
-
-                                		?><li {{ $class }}><a href="/services/{{ $layoutServiceItem->slug }}">{{ $layoutServiceItem->name }}</a></li><?php
-                                	}
-                                }else{
-
-                                    ?><li><a href="#">&nbsp;</a></li><?php
-                                }
-                            	?>
+                                <li class="empty-item"><a href="#">&nbsp;</a></li>
                             </ul>
-                        </div>-->
+                        </div>
 
                         <div class="contentBody">
 
                             <div class="catImage">
-                                <!-- <h2>{{ $content->name }}</h2> -->
                                 @if(!empty($content->hero_image))
                                 <img src="{{ $content->hero_image }}" alt="">
                                 @endif
