@@ -10,7 +10,7 @@
                                 } else {
                                     $class = '';
                                 } ?>
-                                <li {{ $class }}><a href="/about/{{ $layoutServiceItem->slug }}">{{ $layoutServiceItem->name }}</a></li>
+                                <li {{ $class }}><a href="/services/{{ $layoutServiceItem->slug }}">{{ $layoutServiceItem->name }}</a></li>
                             <?php } ?>
                             </ul>
                         <?php } else { ?>
