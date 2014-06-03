@@ -1,13 +1,15 @@
 @extends('layout.frontend')
 @section('content')
 						<div class="contentHead">
-                            <h1>Highlights</h1>
+                            <h1>News</h1>
+                            <ul>
+                                <li class="empty-item"><a href="#">&nbsp;</a></li>
+                            </ul>
                         </div>
 
                         <div class="contentBody">
 
                             <div class="catImage">
-                                <h2>{{ $content->name }}</h2>
                                 <img src="/imageuploads/cabling-temp.jpg" alt="">
                             </div>
                             <div class="subCatCont">
