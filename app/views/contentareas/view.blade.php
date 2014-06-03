@@ -29,7 +29,7 @@
                         <div class="contentBody">
 
                             <div class="catImage">
-                                <h2>{{ $content->name }}</h2>
+                                <!-- <h2>{{ $content->name }}</h2> -->
                                 @if(!empty($content->hero_image))
                                 <img src="{{ $content->hero_image }}" alt="">
                                 @endif
