@@ -10,7 +10,7 @@
                         <div class="contentBody">
 
                             <div class="catImage">
-                                <img src="../imageuploads/contact.jpg" alt="">
+                                <img src="../imageuploads/hands.jpg" alt="">
                             </div>
                             <div class="subCatCont">
                             	<h1>Contact</h1>
