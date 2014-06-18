@@ -1013,7 +1013,8 @@ footer {
       footer ul.details li strong {
         font-family: 'Merriweather Sans', sans-serif;
         font-weight: 700;
-        margin: 0 14px 0 0; }
+        width: 70px;
+        display: inline-block; }
       footer ul.details li a {
         color: #223e92;
         font-family: 'Merriweather Sans', sans-serif;
@@ -1808,7 +1809,9 @@ footer {
       margin: 0 0 0 4px;
       padding: 0 0 0 4px; }
       footer ul.details li strong {
-        margin: 0 6px 0 0; }
+        margin: 0 6px 0 0;
+        width: auto;
+        display: inline; }
       footer ul.details li:first-child {
         border-left: none;
         margin: 0;
