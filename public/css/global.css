@@ -755,9 +755,8 @@ div.content {
       div.content .contentHead ul li {
         float: left;
         margin: 0 20px 10px 0;
-        background: white;
-        background: rgba(255, 255, 255, 0.3);
         padding: 0 10px;
+        border: 2px solid #f8f8f8;
         -webkit-border-top-left-radius: 4px;
         -webkit-border-top-right-radius: 4px;
         -webkit-border-bottom-right-radius: 4px;
@@ -789,7 +788,7 @@ div.content {
           background: white;
           background: rgba(255, 255, 255, 0.5); }
       div.content .contentHead ul li.empty-item {
-        background: none; }
+        border: none; }
       div.content .contentHead ul li.active {
         background: #ffffff; }
         div.content .contentHead ul li.active a {
@@ -1772,22 +1771,10 @@ footer {
   div.content .contentHead h1 {
     width: auto; }
   div.content .contentHead ul {
-    margin: 28px 0 0 0; }
+    margin-top: 18px; }
     div.content .contentHead ul li {
-      margin: 0 20px 0 0;
-      padding: 0 10px 4px 10px;
-      -webkit-border-top-left-radius: 4px;
-      -webkit-border-top-right-radius: 4px;
-      -webkit-border-bottom-right-radius: 0;
-      -webkit-border-bottom-left-radius: 0;
-      -moz-border-radius-topleft: 4px;
-      -moz-border-radius-topright: 4px;
-      -moz-border-radius-bottomright: 0;
-      -moz-border-radius-bottomleft: 0;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 0; }
+      margin: 0 20px 10px 0;
+      padding: 0 10px 4px 10px; }
       div.content .contentHead ul li:first-child {
         margin-left: 100px; }
   div.content .contentBody .catImage h2 {
