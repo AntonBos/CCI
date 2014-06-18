@@ -381,7 +381,7 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 	}
 	p.copyright { font-size: 11px; @include mainFont(300); color: $greyDark; }
 	.footerLogo { float: left; margin: 20px 0 0 0; width: 100%;
-		img { width: 96%; max-width: 400px; height: auto; display: block; }
+		img { width: 100%; height: auto; }
 	}
 }
 
