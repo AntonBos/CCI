@@ -112,7 +112,7 @@
                         <ul class="details">
                             <li><strong>Tel: </strong>+27 (0) 21 531 0850</li>
                             <li><strong>Fax: </strong>+27 (0) 21 531 0851</li>
-                            <li><strong>Email: </strong><a href="mailto:contact@cci.co.za" target="_blank">contact@cci.co.za</a></li>
+                            <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=Website Enquiry" target="_blank">contact@cci.co.za</a></li>
                         </ul>
                         <p class="copyright">Copyright &copy; <span class="placeYear"></span> CCI. Unit A3O, Pinelands Business Park, Avonduur Road, Pinelands, 7405, CAPE TOWN</p>
                     </div>

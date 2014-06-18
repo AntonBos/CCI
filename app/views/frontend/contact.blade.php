@@ -88,7 +88,7 @@
                                                 <p>Email</p>
                                             </td>
                                             <td colspan="2">
-                                                <p style="text-align: center;"><a href="mailto:contact@cci.co.za" target="_blank">contact@cci.co.za</a></p>
+                                                <p style="text-align: center;"><a href="mailto:contact@cci.co.za?Subject=Website Enquiry" target="_blank">contact@cci.co.za</a></p>
                                             </td>
                                         </tr>
                                         <tr>
@@ -96,7 +96,7 @@
                                                 <p>Website</p>
                                             </td>
                                             <td colspan="2">
-                                                <p style="text-align: center;"><a href="http://cci.co.za/" target="_blank">www.cci.co.za/</a></p>
+                                                <p style="text-align: center;"><a href="http://cci.co.za/" target="_blank">www.cci.co.za</a></p>
                                             </td>
                                         </tr>
                                     </tbody>
