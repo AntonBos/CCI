@@ -95,8 +95,8 @@ h4 { font-size: 28px; @include mainFont(300);
 	span { @include mainFont(700); }
 }
 p {
-	a { color: $blueLight;
-		&:hover { text-decoration: none; }
+	a { color: $blueLight; text-decoration: none;
+		&:hover { text-decoration: underline; }
 	}
 }
 
