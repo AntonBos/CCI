@@ -81,12 +81,9 @@
                                 <h5>We’re not the only ones excited about our services. Meet our clients.</h5>
                                 <div class="list_carousel">
                                     <ul id="clients">
-                                        <li><img src="/img/client-logo-1.jpg" alt=""></li>
-                                        <li><img src="/img/client-logo-2.jpg" alt=""></li>
-                                        <li><img src="/img/client-logo-3.jpg" alt=""></li>
-                                        <li><img src="/img/client-logo-4.jpg" alt=""></li>
-                                        <li><img src="/img/client-logo-5.jpg" alt=""></li>
-                                        <li><img src="/img/client-logo-6.jpg" alt=""></li>
+                                        @foreach(Logo::orderBy('order_by', 'ASC')->get() as $logo)
+                                        <li><img src="{{ $logo->filename }}" alt=""></li>
+                                        @endforeach
                                     </ul>
                                     <!-- <a id="prev2" class="prev" href="#">&lt;</a>
                                     <a id="next2" class="next" href="#">&gt;</a> -->

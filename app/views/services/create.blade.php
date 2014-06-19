@@ -11,7 +11,7 @@
 						<legend>@if(!$instance->id) Add @else Edit @endif a Service</legend>
 						<div class="form-group">
 							{{ Form::label('name', 'Service Name') }}
-							{{ $errors->first('name') }}
+							<p class="bg-danger">{{ $errors->first('name') }}</p>
 							{{ Form::text('name', $instance->name, array('class' => 'form-control', 'placeholder' => 'Name of Service')) }}
 						</div>
 						<div class="form-group">
@@ -28,27 +28,27 @@
 						</div>
 						<div class="form-group">
 							{{ Form::label('hero_image', 'Hero Image') }}
-							{{ $errors->first('hero_image') }}
+							<p class="bg-danger">{{ $errors->first('hero_image') }}</p>
 							{{ Form::file('hero_image'/*, $instance->hero_image*/, array('class' => 'form-control')) }}
 						</div>
 						<div class="form-group">
 							{{ Form::label('short_description', 'Short description of Service') }}
-							{{ $errors->first('short_description') }}
+							<p class="bg-danger">{{ $errors->first('short_description') }}</p>
 							{{ Form::textarea('short_description', $instance->short_description, array('id' => 'shortDescriptionTextarea', 'class' => 'form-control', 'placeholder' => 'Short description of service')) }}
 						</div>
 						<div class="form-group">
 							{{ Form::label('description', 'Service Content') }}
-							{{ $errors->first('description') }}
+							<p class="bg-danger">{{ $errors->first('description') }}</p>
 							{{ Form::textarea('description', $instance->description, array('id' => 'descriptionTextarea', 'class' => 'form-control', 'placeholder' => 'Content of the service page')) }}
 						</div>
 						<div class="form-group">
 							{{ Form::label('order_by', 'Order By') }}
-							{{ $errors->first('order_by') }}
+							<p class="bg-danger">{{ $errors->first('order_by') }}</p>
 							{{ Form::text('order_by', $instance->order_by, array('class' => 'form-control', 'placeholder' => 'Order of the service page')) }}
 						</div>
 						<div class="form-group">
 							{{ Form::label('enabled', 'Enabled') }}
-							{{ $errors->first('enabled') }}
+							<p class="bg-danger">{{ $errors->first('enabled') }}</p>
 							{{ Form::radio('enabled', 1, $instance->enabled); }} Yes
 							{{ Form::radio('enabled', 0, !$instance->enabled); }} No
 						</div>

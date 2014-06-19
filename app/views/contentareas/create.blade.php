@@ -11,7 +11,7 @@
 						<legend>@if(!$instance->id) Add @else Edit @endif a Content Area</legend>
 						<div class="form-group">
 							{{ Form::label('name', 'Content Area Name') }}
-							{{ $errors->first('name') }}
+							<p class="bg-danger">{{ $errors->first('name') }}</p>
 							{{ Form::text('name', $instance->name, array('class' => 'form-control', 'placeholder' => 'Name of Content Area')) }}
 						</div>
 						<div class="form-group">
@@ -23,12 +23,12 @@
 						</div>
 						<div class="form-group">
 							{{ Form::label('description', 'Content Area Content') }}
-							{{ $errors->first('description') }}
+							<p class="bg-danger">{{ $errors->first('description') }}</p>
 							{{ Form::textarea('description', $instance->description, array('id' => 'descriptionTextarea', 'class' => 'form-control', 'placeholder' => 'Content of the Content Area')) }}
 						</div>
 						<div class="form-group">
 							{{ Form::label('hero_image', 'Hero Image') }}
-							{{ $errors->first('hero_image') }}
+							<p class="bg-danger">{{ $errors->first('hero_image') }}</p>
 							{{ Form::file('hero_image'/*, $instance->hero_image*/, array('class' => 'form-control')) }}
 						</div>
 						<div class="form-group">

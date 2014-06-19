@@ -26,6 +26,7 @@
 					<li><a href="/admin/about-pages"><span class="glyphicon glyphicon-book"></span> About Pages</a></li>
 					<li><a href="/admin/content-areas"><span class="glyphicon glyphicon-book"></span> Pages and Content Areas</a></li>
 					<li><a href="/admin/highlights"><span class="glyphicon glyphicon-star"></span> Highlights</a></li>
+					<li><a href="/admin/logos"><span class="glyphicon glyphicon-picture"></span> Logos</a></li>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

@@ -12,7 +12,7 @@ $(document).ready(function() {
 		skin_url: '/js/tinymce/js/tinymce/skins/lightgray',
 		image_advtab: true,
 		plugins: [
-			"image link media paste code textcolor"
+			"image link media paste code textcolor filemanager"
 		],
 		toolbar1: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent",
     	toolbar2: "link image | forecolor backcolor | fontselect |  fontsizeselect",

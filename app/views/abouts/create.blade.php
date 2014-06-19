@@ -11,39 +11,27 @@
 						<legend>@if(!$instance->id) Add @else Edit @endif an About Page</legend>
 						<div class="form-group">
 							{{ Form::label('name', 'About Page Name') }}
-							{{ $errors->first('name') }}
+							<p class="bg-danger">{{ $errors->first('name') }}</p>
 							{{ Form::text('name', $instance->name, array('class' => 'form-control', 'placeholder' => 'Name of About Page')) }}
 						</div>
-						<!--<div class="form-group">
-							<?php
-							$abouts = array(0 => 'Top Level About Page');
-
-							foreach (About::all() as $about)
-							{
-							    $abouts[] = array($about->id => $about->name);
-							}
-							?>
-							{{ Form::label('about_id', 'Parent About Page') }}
-							{{ Form::select('about_id', $abouts, $instance->about_id, array('class' => 'form-control')) }}
-						</div>-->
 						<div class="form-group">
 							{{ Form::label('hero_image', 'Hero Image') }}
-							{{ $errors->first('hero_image') }}
+							<p class="bg-danger">{{ $errors->first('hero_image') }}</p>
 							{{ Form::file('hero_image'/*, $instance->hero_image*/, array('class' => 'form-control')) }}
 						</div>
 						<div class="form-group">
 							{{ Form::label('description', 'About Page Content') }}
-							{{ $errors->first('description') }}
+							<p class="bg-danger">{{ $errors->first('description') }}</p>
 							{{ Form::textarea('description', $instance->description, array('id' => 'descriptionTextarea', 'class' => 'form-control', 'placeholder' => 'Content of the service page')) }}
 						</div>
 						<div class="form-group">
 							{{ Form::label('order_by', 'Order By') }}
-							{{ $errors->first('order_by') }}
+							<p class="bg-danger">{{ $errors->first('order_by') }}</p>
 							{{ Form::text('order_by', $instance->order_by, array('class' => 'form-control', 'placeholder' => 'Order of the service page')) }}
 						</div>
 						<div class="form-group">
 							{{ Form::label('enabled', 'Enabled') }}
-							{{ $errors->first('enabled') }}
+							<p class="bg-danger">{{ $errors->first('enabled') }}</p>
 							{{ Form::radio('enabled', 1, $instance->enabled); }} Yes
 							{{ Form::radio('enabled', 0, !$instance->enabled); }} No
 						</div>

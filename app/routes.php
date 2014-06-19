@@ -178,4 +178,5 @@ Route::group(array('prefix' => 'admin', 'before' => 'admin'), function()
 	Route::controller('services', 'ServiceController');
 	Route::controller('content-areas', 'ContentAreaController');
 	Route::controller('highlights', 'HighlightController');
+	Route::controller('logos', 'LogoController');
 });
