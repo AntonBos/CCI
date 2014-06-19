@@ -26,7 +26,9 @@
                                 <img src="{{ !empty($content->hero_image) ? /*Image::make(Request::root().$content->hero_image)->crop(1024,240)->encode('png', 75)*/ $content->hero_image : '/imageuploads/cabling-temp.jpg' }}" alt="">
                             </div>
                             <div class="subCatCont">
+                                @if($layoutAboutSlug)
                             	<h1>{{ $content->name }}</h1>
+                                @endif
                             	{{ $content->description }}
                             </div>
                         </div>

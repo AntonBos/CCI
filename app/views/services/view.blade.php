@@ -49,8 +49,13 @@
                                 </ul>
                             </div>
                             @endif
+                            <?php
+
+                            ?>
                             <div class="subCatCont">
+                                @if($layoutTopLevelService)
                             	<h1>{{ $content->name }}</h1>
+                                @endif
                             	{{ $content->description }}
                             </div>
                         </div>
