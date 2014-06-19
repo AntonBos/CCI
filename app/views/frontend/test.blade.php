@@ -39,8 +39,8 @@ if (function_exists('curl_init')) {
   curl_close($SVCurl);
 }
 else {
-    $SVContent = file_get_contents($SVURL);
-    list($SVHTTPVersion,$SVHTTPStatusCode,$SVHTTPMsg) = explode(' ',$http_response_header[0], 3);
+  $SVContent = file_get_contents($SVURL);
+  list($SVHTTPVersion,$SVHTTPStatusCode,$SVHTTPMsg) = explode(' ',$http_response_header[0], 3);
 }
 
 switch($SVHTTPStatusCode) {
