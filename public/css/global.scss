@@ -95,8 +95,8 @@ h4 { font-size: 28px; @include mainFont(300);
 	span { @include mainFont(700); }
 }
 p {
-	a { color: $blueLight;
-		&:hover { text-decoration: none; }
+	a { color: $blueLight; text-decoration: none;
+		&:hover { text-decoration: underline; }
 	}
 }
 
@@ -188,7 +188,6 @@ header.other { height: 100px; width: 100%; position: fixed; z-index: 1; top: 0; 
 			a {
 				i { }
 				i.fa-facebook-square { color: #3b5998; }
-				i.fa-twitter { color: #00aced; }
 				i.fa-linkedin-square { color: #007bb6; }
 			}
 		}
@@ -289,16 +288,17 @@ div.content { width: 100%; float: left; position: relative; z-index: 0;
 	.contentHead { position: relative; z-index: 0; padding: 20px 0 0 0;
 		h1 { color: #ffffff; width: 100%; float: left; margin-bottom: 0; }
 		ul { margin: 28px 0 14px 0; padding: 0; list-style: none; float: left;
-			li { float: left; margin: 0 20px 10px 0;
+			li { float: left; margin: 0 20px 10px 0; padding: 0 10px; border: 2px solid $offWhite;
+				@include rounded(4px, 4px, 4px, 4px);
+				@include transition(background, 0.4s, ease);
 				a { text-decoration: none; color: #ffffff; text-transform: uppercase; font-size: 12px; position: relative; top: 0;
 					@include textShadow(0px, 0px, 4px);
 					@include mainFont(300);
-					@include transition(top, 0.2s, ease);
-					&:hover { top: -3px; }
 				}
+				&:hover { background: rgb(255, 255, 255); background: rgba(255, 255, 255, 0.5); }
 			}
-			li.active { background: #ffffff; padding: 0 10px;
-				@include rounded(4px, 4px, 4px, 4px);
+			li.empty-item { border: none; }
+			li.active { background: #ffffff;
 				a { color: $blueDark;
 					@include textShadow(0px, 0px, 0);
 					@include mainFont(400);
@@ -373,7 +373,7 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 	h6 { font-size: 20px; @include mainFont(300); color: $greyDark; margin: 0 0 14px 0; }
 	ul.details { margin: 0 0 20px 0; padding: 0; list-style: none; width: 100%; float: left;
 		li { font-size: 13px; @include mainFont(400); color: $greyDark; line-height: 20px; margin: 0; padding: 0;
-			strong { @include mainFont(700); margin: 0 14px 0 0; }
+			strong { @include mainFont(700); width: 70px; display: inline-block; }
 			a { color: $blueDark; @include mainFont(700);
 				&:hover { text-decoration: none; }
 			}
@@ -381,7 +381,7 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 	}
 	p.copyright { font-size: 11px; @include mainFont(300); color: $greyDark; }
 	.footerLogo { float: left; margin: 20px 0 0 0; width: 100%;
-		img { width: 96%; max-width: 400px; height: auto; display: block; }
+		img { width: 100%; height: auto; }
 	}
 }
 
@@ -516,11 +516,9 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 		.contentHead {
 			h1 { width: auto; }
 			ul { margin: 28px 0 0 0;
-				li { margin: 0 20px 0 0; padding-bottom: 4px;
-					&:first-child { margin-left: 100px; }
-				}
-				li.active { padding: 0 10px 4px 10px;
+				li { margin: 0 20px 0 0; padding: 0 10px 4px 10px;
 					@include rounded(4px, 4px, 0, 0);
+					&:first-child { margin-left: 100px; }
 				}
 			}
 		}
@@ -789,12 +787,9 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 	div.content {
 		.contentHead {
 			h1 { width: auto; }
-			ul { margin: 28px 0 0 0;
-				li { margin: 0 20px 0 0; padding-bottom: 4px;
+			ul { margin-top: 18px; 
+				li { margin: 0 20px 10px 0; padding: 0 10px 4px 10px;
 					&:first-child { margin-left: 100px; }
-				}
-				li.active { padding: 0 10px 4px 10px;
-					@include rounded(4px, 4px, 0, 0);
 				}
 			}
 		}
@@ -813,7 +808,7 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 	footer {
 		ul.details { margin: 0 0 10px 0;
 			li { float: left; border-left: 1px solid $greyDark; line-height: 13px; margin: 0 0 0 4px; padding: 0 0 0 4px;
-				strong { margin: 0 6px 0 0; }
+				strong { margin: 0 6px 0 0; width: auto; display: inline; } 
 				&:first-child { border-left: none; margin: 0; padding: 0; }
 			}
 		}

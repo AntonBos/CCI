@@ -2,7 +2,9 @@
 @section('content')
         <div class="contentHead">
             <h1>Latest News</h1>
-            <ul><li><a href="#">&nbsp;</a></li></ul>
+            <ul>
+                <li class="empty-item"><a href="#">&nbsp;</a></li>
+            </ul>
         </div>
 
         <div class="contentBody">
@@ -22,7 +24,16 @@
                                 <div class="highWrap" style="margin-bottom: 30px;">
                                     <h4><a href="/highlights/{{ $highlight->slug }}">{{ $highlight->name }}</a></h4>
                                     <time>{{ date('j F Y', strtotime($highlight->date)) }}</time>
-                                    <p>{{ $highlight->short_description }}</p>
+                                    <p>
+                                        <?php
+                                            $string = $highlight->short_description;
+                        
+                                            if (strlen($string) > 120) {
+                                              $stringCut = substr($string, 0, 120);
+                                              $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'... '; 
+                                            }
+                                        echo $string; ?>
+                                    </p>
                                     <a href="/highlights/{{ $highlight->slug }}" class="button button-primary">Read More<i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </div>
