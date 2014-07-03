@@ -94,17 +94,25 @@
                             <footer class="block">
                                         
                                 <div class="col8">
-                                    <h6>Contact Details</h6>
+                                    <h6>Cape Town Head Office</h6>
                                     <ul class="details">
                                         <li><strong>Tel: </strong>+27 (0) 21 531 0850</li>
                                         <li><strong>Fax: </strong>+27 (0) 21 531 0851</li>
                                         <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=Website Enquiry">contact@cci.co.za</a></li>
                                     </ul>
-                                    <p class="copyright">Copyright &copy; <span class="placeYear"></span> CCI. Unit A3O, Pinelands Business Park, Avonduur Road, Pinelands, 7405, CAPE TOWN</p>
+                                    <p class="copyright">Unit A3O Pinelands Business Park, Avonduur Road, Pinelands, 7405, CAPE TOWN</p>
+                                    <h6>Johannesburg Offices</h6>
+                                    <ul class="details">
+                                        <li><strong>Tel: </strong>+27 (0) 11 664 6055</li>
+                                        <li><strong>Fax: </strong>+27 (0) 11 664 6194</li>
+                                        <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=Website Enquiry">contact@cci.co.za</a></li>
+                                    </ul>
+                                    <p class="copyright">Unit A Krynaiuw Office Park, 14 Ontdekkers Road, Roodepoort, GAUTENG</p>
                                 </div>
 
                                 <div class="col4">
                                     <img class="footerLogo" src="/img/footer-logo.svg" alt="">
+                                    <p class="copyright" style="float: right;">Copyright &copy; <span class="placeYear"></span> CCI.</p>
                                 </div>
 
                             </footer>
