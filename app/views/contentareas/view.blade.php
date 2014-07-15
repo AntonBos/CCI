@@ -35,7 +35,7 @@
                             </div>
                             @endif
                             <div class="subCatCont">
-                            	<h1>{{ $content->name }}</h1>
+                            	<!-- <h1>{{ $content->name }}</h1> -->
                             	{{ $content->description }}
                             </div>
                         </div>
