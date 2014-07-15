@@ -89,7 +89,7 @@
                                                 <p>Email</p>
                                             </td>
                                             <td colspan="2">
-                                                <p style="text-align: center;"><a href="mailto:contact@cci.co.za?Subject=Website Enquiry">contact@cci.co.za</a></p>
+                                                <p style="text-align: center;"><a href="mailto:contact@cci.co.za?Subject=CCI Website Enquiry">contact@cci.co.za</a></p>
                                             </td>
                                         </tr>
                                         <tr>

@@ -101,7 +101,7 @@
                                         <ul class="details">
                                             <li><strong>Tel: </strong>+27 (0) 21 531 0850</li>
                                             <li><strong>Fax: </strong>+27 (0) 21 531 0851</li>
-                                            <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=Website Enquiry">contact@cci.co.za</a></li>
+                                            <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=CCI Website Enquiry">contact@cci.co.za</a></li>
                                         </ul>
                                         <p class="copyright">Unit A3O Pinelands Business Park, Avonduur Road, Pinelands, 7405, CAPE TOWN</p>
                                     </div>
@@ -111,7 +111,7 @@
                                         <ul class="details">
                                             <li><strong>Tel: </strong>+27 (0) 11 664 6055</li>
                                             <li><strong>Fax: </strong>+27 (0) 11 664 6194</li>
-                                            <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=Website Enquiry">contact@cci.co.za</a></li>
+                                            <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=CCI Website Enquiry">contact@cci.co.za</a></li>
                                         </ul>
                                         <p class="copyright">Unit A Krynaiuw Office Park, 14 Ontdekkers Road, Roodepoort, GAUTENG</p>
                                     </div>
