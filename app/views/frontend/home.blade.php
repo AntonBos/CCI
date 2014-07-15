@@ -74,7 +74,7 @@
         $highlights = Highlight::isEnabled()->orderBy('date', 'DESC')->get();
         ?>
         @if(!empty($highlights))
-        <section class="highlightsWrap block">
+        <section class="highlightsWrap block" style="display: none;">
             <div class="container">
 
                 <div class="row">
