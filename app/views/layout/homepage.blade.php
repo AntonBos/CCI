@@ -57,9 +57,9 @@
                         </div>
 
                         <div class="col3">
-                            <p class="cta">Get a free quotation today.
+                            <!-- <p class="cta">Get a free quotation today.
                                 <a href="#">Get Started</a>
-                            </p>
+                            </p> -->
                         </div>
                     
                     </div>
