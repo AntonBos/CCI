@@ -371,11 +371,16 @@ aside.clientStrip { height: auto; background: #ffffff; position: relative; z-ind
 /* ==== FOOTER ==== */
 footer { height: auto; background: $greyLight; position: relative; z-index: 3; padding: 36px 0;
 	h6 { font-size: 20px; @include mainFont(300); color: $greyDark; margin: 0 0 14px 0; }
-	ul.details { margin: 0 0 20px 0; padding: 0; list-style: none; width: 100%; float: left;
-		li { font-size: 13px; @include mainFont(400); color: $greyDark; line-height: 20px; margin: 0; padding: 0;
-			strong { @include mainFont(700); width: 70px; display: inline-block; }
-			a { color: $blueDark; @include mainFont(700);
-				&:hover { text-decoration: none; }
+	.office-wrap { float: left; width: 100%;
+		p.detail-head { margin: 0; padding: 0; color: $greyDark; font-size: 14px;
+			@include mainFont(700);
+		}
+		ul.details { margin: 0 0 20px 0; padding: 0; list-style: none; width: 100%; float: left;
+			li { font-size: 12px; @include mainFont(400); color: $greyDark; line-height: 20px; margin: 0; padding: 0;
+				strong { @include mainFont(700); width: 70px; display: inline-block; }
+				a { color: $blueDark; @include mainFont(700);
+					&:hover { text-decoration: none; }
+				}
 			}
 		}
 	}
@@ -806,11 +811,13 @@ footer { height: auto; background: $greyLight; position: relative; z-index: 3; p
 
 	/* ==== FOOTER ==== */
 	footer {
-		ul.details { margin: 0 0 10px 0;
-			li { float: left; border-left: 1px solid $greyDark; line-height: 13px; margin: 0 0 0 4px; padding: 0 0 0 4px;
-				strong { margin: 0 6px 0 0; width: auto; display: inline; } 
-				&:first-child { border-left: none; margin: 0; padding: 0; }
+		.office-wrap { width: 40%; margin: 0 4% 0 0;
+			ul.details { margin: 0 0 10px 0;
+				li { float: left; margin: 0; padding: 0;
+					strong { margin: 0 6px 0 0; width: auto; display: inline; }
+				}
 			}
+			p.copyright { font-size: 11px; @include mainFont(300); color: $greyDark; }
 		}
 		.footerLogo { float: right; margin: 12px 0 0 0; }
 	}

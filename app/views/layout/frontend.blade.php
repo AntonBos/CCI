@@ -94,20 +94,27 @@
                             <footer class="block">
                                         
                                 <div class="col8">
-                                    <h6>Cape Town Head Office</h6>
-                                    <ul class="details">
-                                        <li><strong>Tel: </strong>+27 (0) 21 531 0850</li>
-                                        <li><strong>Fax: </strong>+27 (0) 21 531 0851</li>
-                                        <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=Website Enquiry">contact@cci.co.za</a></li>
-                                    </ul>
-                                    <p class="copyright">Unit A3O Pinelands Business Park, Avonduur Road, Pinelands, 7405, CAPE TOWN</p>
-                                    <h6>Johannesburg Offices</h6>
-                                    <ul class="details">
-                                        <li><strong>Tel: </strong>+27 (0) 11 664 6055</li>
-                                        <li><strong>Fax: </strong>+27 (0) 11 664 6194</li>
-                                        <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=Website Enquiry">contact@cci.co.za</a></li>
-                                    </ul>
-                                    <p class="copyright">Unit A Krynaiuw Office Park, 14 Ontdekkers Road, Roodepoort, GAUTENG</p>
+                                    <h6>Contact Details</h6>
+                                    
+                                    <div class="office-wrap">
+                                        <p class="detail-head">Cape Town Head Office</p>
+                                        <ul class="details">
+                                            <li><strong>Tel: </strong>+27 (0) 21 531 0850</li>
+                                            <li><strong>Fax: </strong>+27 (0) 21 531 0851</li>
+                                            <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=Website Enquiry">contact@cci.co.za</a></li>
+                                        </ul>
+                                        <p class="copyright">Unit A3O Pinelands Business Park, Avonduur Road, Pinelands, 7405, CAPE TOWN</p>
+                                    </div>
+
+                                    <div class="office-wrap">
+                                        <p class="detail-head">Johannesburg Offices</p>
+                                        <ul class="details">
+                                            <li><strong>Tel: </strong>+27 (0) 11 664 6055</li>
+                                            <li><strong>Fax: </strong>+27 (0) 11 664 6194</li>
+                                            <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=Website Enquiry">contact@cci.co.za</a></li>
+                                        </ul>
+                                        <p class="copyright">Unit A Krynaiuw Office Park, 14 Ontdekkers Road, Roodepoort, GAUTENG</p>
+                                    </div>
                                 </div>
 
                                 <div class="col4">

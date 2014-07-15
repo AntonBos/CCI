@@ -996,31 +996,41 @@ footer {
     font-weight: 300;
     color: #75767c;
     margin: 0 0 14px 0; }
-  footer ul.details {
-    margin: 0 0 20px 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    float: left; }
-    footer ul.details li {
-      font-size: 13px;
-      font-family: 'Merriweather Sans', sans-serif;
-      font-weight: 400;
-      color: #75767c;
-      line-height: 20px;
+  footer .office-wrap {
+    float: left;
+    width: 100%; }
+    footer .office-wrap p.detail-head {
       margin: 0;
-      padding: 0; }
-      footer ul.details li strong {
+      padding: 0;
+      color: #75767c;
+      font-size: 14px;
+      font-family: 'Merriweather Sans', sans-serif;
+      font-weight: 700; }
+    footer .office-wrap ul.details {
+      margin: 0 0 20px 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+      float: left; }
+      footer .office-wrap ul.details li {
+        font-size: 12px;
         font-family: 'Merriweather Sans', sans-serif;
-        font-weight: 700;
-        width: 70px;
-        display: inline-block; }
-      footer ul.details li a {
-        color: #223e92;
-        font-family: 'Merriweather Sans', sans-serif;
-        font-weight: 700; }
-        footer ul.details li a:hover {
-          text-decoration: none; }
+        font-weight: 400;
+        color: #75767c;
+        line-height: 20px;
+        margin: 0;
+        padding: 0; }
+        footer .office-wrap ul.details li strong {
+          font-family: 'Merriweather Sans', sans-serif;
+          font-weight: 700;
+          width: 70px;
+          display: inline-block; }
+        footer .office-wrap ul.details li a {
+          color: #223e92;
+          font-family: 'Merriweather Sans', sans-serif;
+          font-weight: 700; }
+          footer .office-wrap ul.details li a:hover {
+            text-decoration: none; }
   footer p.copyright {
     font-size: 11px;
     font-family: 'Merriweather Sans', sans-serif;
@@ -1786,22 +1796,24 @@ footer {
     margin: 0 0 80px 0; }
 
   /* ==== FOOTER ==== */
-  footer ul.details {
-    margin: 0 0 10px 0; }
-    footer ul.details li {
-      float: left;
-      border-left: 1px solid #75767c;
-      line-height: 13px;
-      margin: 0 0 0 4px;
-      padding: 0 0 0 4px; }
-      footer ul.details li strong {
-        margin: 0 6px 0 0;
-        width: auto;
-        display: inline; }
-      footer ul.details li:first-child {
-        border-left: none;
+  footer .office-wrap {
+    width: 40%;
+    margin: 0 4% 0 0; }
+    footer .office-wrap ul.details {
+      margin: 0 0 10px 0; }
+      footer .office-wrap ul.details li {
+        float: left;
         margin: 0;
         padding: 0; }
+        footer .office-wrap ul.details li strong {
+          margin: 0 6px 0 0;
+          width: auto;
+          display: inline; }
+    footer .office-wrap p.copyright {
+      font-size: 11px;
+      font-family: 'Merriweather Sans', sans-serif;
+      font-weight: 300;
+      color: #75767c; }
   footer .footerLogo {
     float: right;
     margin: 12px 0 0 0; } }
