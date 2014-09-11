@@ -121,7 +121,7 @@
                                 <li><strong>Fax: </strong>+27 (0) 11 664 6194</li>
                                 <li><strong>Email: </strong><a href="mailto:contact@cci.co.za?Subject=CCI Website Enquiry">contact@cci.co.za</a></li>
                             </ul>
-                            <p class="copyright">Unit A Krynaiuw Office Park, 14 Ontdekkers Road, Roodepoort, GAUTENG</p>
+                            <p class="copyright">Unit A &amp; E Krynauw Office Park, 14 Cilliers Street, Roodepoort, 1724, GAUTENG</p>
                         </div>
                     </div>
 

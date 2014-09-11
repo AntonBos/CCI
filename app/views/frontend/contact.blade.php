@@ -54,10 +54,11 @@
                                                 South Africa</p>
                                             </td>
                                             <td>
-                                                <p>Unit E<br>
+                                                <p>Unit A &amp; E<br>
                                                 Krynauw Office Park<br>
-                                                14 Cilliers Road<br>
+                                                14 Cilliers Street<br>
                                                 Roodepoort<br>
+                                                1724<br>
                                                 Gauteng<br>
                                                 South Africa</p>
                                             </td>
