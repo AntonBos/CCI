@@ -128,6 +128,10 @@
                     <div class="col4">
                         <img class="footerLogo" src="/img/footer-logo.svg" alt="">
                         <p class="copyright" style="float: right;">Copyright &copy; <span class="placeYear"></span> CCI.</p>
+                        <ul class="docs">
+                            <li><a href="/documents/Disclaimer.pdf" target="_blank">Disclaimer</a></li>
+                            <li><a href="/documents/Privacy-Policy.pdf" target="_blank">Privacy Policy</a></li>
+                        </ul>
                     </div>
                 
                 </div>
