@@ -39,4 +39,23 @@ class UserController extends \BaseController {
 
 		return Redirect::to(URL::action(get_called_class().'@getIndex'))->with('message', 'A new User has been created.');
 	}
+
+	public function postUpdate($id){
+
+		$instance = Sentry::findUserById($id);
+
+		//$instance = $this->model->find($id);
+		//$instance->fill(Input::all());
+		$instance->email = Input::get('email');
+		$instance->password = Input::get('password');
+		$instance->first_name = Input::get('first_name');
+		$instance->last_name = Input::get('last_name');
+
+		if(!$instance->save()){
+
+			return Redirect::to('/admin/'.$this->modelNamePluralLowerCase.'/edit/'.$id)->withErrors($instance->errors());
+		}
+
+		return Redirect::to(URL::action(get_called_class().'@getIndex'))->with('message', 'An existing ' . $this->getSplitAtCaps($this->modelName) . ' has been updated.');
+	}
 }
